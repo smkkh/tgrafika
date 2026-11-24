@@ -1,0 +1,2869 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>toop Grafika - Solusi Cetak & Desain Profesional</title>
+  <meta name="theme-color" content="#1e3a8a" />
+  <meta name="description" content="Katalog Digital & E-Commerce Resmi toop Grafika. Cetak cepat, harga transparan untuk Umum & Reseller." />
+
+  <!-- PWA MANIFEST SEBAGAI DATA URI (SINGLE-FILE) -->
+  <link rel="manifest" href='data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22toop%20Grafika%20Store%22%2C%22short_name%22%3A%22toopGrafika%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23ffffff%22%2C%22theme_color%22%3A%22%231d4ed8%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%3Butf8%2C%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20512%20512%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%231d4ed8%27%2F%3E%3Cstop%20offset%3D%2750%25%27%20stop-color%3D%27%23dc2626%27%2F%3E%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%2316a34a%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27512%27%20height%3D%27512%27%20rx%3D%27110%27%20fill%3D%27url(%23g)%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2756%25%27%20font-family%3D%27sans-serif%27%20font-weight%3D%27900%27%20font-size%3D%27240%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EtG%3C%2Ftext%3E%3C%2Fsvg%3E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D' />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ==========================================================================
+       1. FULL-PAGE BLOGGER OVERRIDE & DESIGN TOKENS (BIRU, MERAH, HIJAU)
+       ========================================================================== */
+    :root {
+      --tg-blue: #1d4ed8;
+      --tg-red: #dc2626;
+      --tg-green: #16a34a;
+      --tg-grad: linear-gradient(135deg, #1d4ed8 0%, #dc2626 52%, #16a34a 100%);
+      --tg-grad-soft: linear-gradient(135deg, rgba(29, 78, 216, 0.08) 0%, rgba(220, 38, 38, 0.08) 52%, rgba(22, 163, 74, 0.08) 100%);
+    }
+
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      overflow-x: hidden !important;
+      background-color: #ffffff !important;
+      font-family: 'Inter', sans-serif;
+      color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Sembunyikan elemen bawaan Blogger jika ditempel ke halaman statis Blogspot */
+    #navbar-iframe, .navbar, .header-outer, .sidebar-wrapper, .footer-wrapper, .post-footer, .comments, .feed-links, .blog-pager {
+      display: none !important;
+      height: 0 !important;
+      visibility: hidden !important;
+    }
+
+    /* Container Utama Fullscreen Overlay */
+    #toop-grafika-root {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      background: #ffffff;
+      z-index: 99999;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Gradasi Khas toop Grafika (Biru - Merah - Hijau) */
+    .tg-gradient-bg {
+      background: var(--tg-grad);
+    }
+
+    /* Efek Aurora Bergerak pada Hero Banner */
+    .hero-aurora {
+      isolation: isolate;
+      background: #173b9b;
+    }
+    .hero-aurora::before {
+      content: "";
+      position: absolute;
+      inset: -35%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 1;
+      filter: blur(42px);
+      background-image:
+        radial-gradient(ellipse at 20% 45%, rgba(37, 99, 235, 0.98) 0, transparent 42%),
+        radial-gradient(ellipse at 55% 35%, rgba(220, 38, 38, 0.94) 0, transparent 45%),
+        radial-gradient(ellipse at 78% 60%, rgba(22, 163, 74, 0.98) 0, transparent 42%);
+      background-size: 180% 180%;
+      animation: hero-aurora-flow 8s ease-in-out infinite alternate;
+      will-change: transform, background-position;
+    }
+    .hero-aurora[data-theme="blue"] {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb 55%, #06b6d4);
+    }
+    .hero-aurora[data-theme="blue"]::before {
+      background-image:
+        radial-gradient(ellipse at 18% 50%, #2563eb 0, transparent 45%),
+        radial-gradient(ellipse at 55% 40%, #06b6d4 0, transparent 48%),
+        radial-gradient(ellipse at 82% 60%, #0f766e 0, transparent 44%);
+    }
+    .hero-aurora[data-theme="red"] {
+      background: linear-gradient(135deg, #b91c1c, #dc2626 55%, #f97316);
+    }
+    .hero-aurora[data-theme="red"]::before {
+      background-image:
+        radial-gradient(ellipse at 18% 50%, #ef4444 0, transparent 45%),
+        radial-gradient(ellipse at 52% 35%, #dc2626 0, transparent 48%),
+        radial-gradient(ellipse at 82% 60%, #f97316 0, transparent 44%);
+    }
+    .hero-aurora[data-theme="green"] {
+      background: linear-gradient(135deg, #15803d, #16a34a 55%, #84cc16);
+    }
+    .hero-aurora[data-theme="green"]::before {
+      background-image:
+        radial-gradient(ellipse at 18% 50%, #22c55e 0, transparent 45%),
+        radial-gradient(ellipse at 52% 35%, #16a34a 0, transparent 48%),
+        radial-gradient(ellipse at 82% 60%, #84cc16 0, transparent 44%);
+    }
+    .hero-aurora.is-paused::before {
+      animation-play-state: paused;
+    }
+    @keyframes hero-aurora-flow {
+      0% {
+        transform: translate3d(-12%, -8%, 0) rotate(-8deg) scale(0.92);
+        background-position: 0% 20%;
+      }
+      50% {
+        transform: translate3d(10%, 7%, 0) rotate(8deg) scale(1.12);
+        background-position: 100% 80%;
+      }
+      100% {
+        transform: translate3d(-8%, 10%, 0) rotate(-5deg) scale(1.02);
+        background-position: 15% 100%;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-aurora:not(.is-moving)::before { animation: none; }
+    }
+    .hero-style-btn[aria-pressed="true"] {
+      background: #ffffff;
+      color: #1e3a8a;
+    }
+
+    .tg-gradient-text {
+      background: var(--tg-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tg-gradient-border {
+      position: relative;
+      background: #ffffff;
+      border-radius: 1rem;
+    }
+    .tg-gradient-border::before {
+      content: "";
+      position: absolute;
+      inset: -1.5px;
+      border-radius: 1.08rem;
+      background: var(--tg-grad);
+      z-index: -1;
+      opacity: 0.35;
+    }
+
+    /* Efek Glassmorphism */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.84);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(226, 232, 240, 0.85);
+    }
+
+    /* Kilatan warna berputar pada tepian kolom pencarian */
+    @property --search-angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    .search-light-border {
+      position: relative;
+      isolation: isolate;
+      padding: 2px;
+      border-radius: 1rem;
+      background: #bfdbfe;
+    }
+
+    .search-light-border::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: conic-gradient(
+        from var(--search-angle),
+        transparent 0deg 270deg,
+        #ffffff 282deg,
+        #1d4ed8 300deg,
+        #16a34a 318deg,
+        #dc2626 336deg,
+        #ffffff 348deg,
+        transparent 360deg
+      );
+      animation: search-edge-spin 1.8s linear infinite;
+    }
+
+    @keyframes search-edge-spin {
+      to { --search-angle: 360deg; }
+    }
+
+    /* ======================================================================
+       2. ATURAN TATA LETAK RESPONSIF (DESKTOP SIDEBAR & MOBILE BOTTOM NAV)
+       ====================================================================== */
+    @media (min-width: 768px) {
+      #desktop-sidebar {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 268px;
+        z-index: 40;
+      }
+      #mobile-bottom-nav {
+        display: none !important;
+      }
+      #main-content-wrapper {
+        margin-left: 268px;
+        padding-bottom: 2.5rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      #desktop-sidebar {
+        display: none !important;
+      }
+      #mobile-bottom-nav {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        border-radius: 1rem 1rem 0 0;
+        padding-bottom: calc(0.75rem + env(safe-area-inset-bottom)) !important;
+        min-height: 4.5rem;
+      }
+      #main-content-wrapper {
+        margin-left: 0;
+        padding-bottom: calc(8rem + env(safe-area-inset-bottom)) !important;
+      }
+      #main-content-wrapper footer {
+        padding-bottom: calc(8rem + env(safe-area-inset-bottom)) !important;
+      }
+    }
+
+    @media (min-width: 768px) {
+      #tab-favorites > .mb-6,
+      #tab-partners > .mb-6 {
+        display: none !important;
+      }
+    }
+
+    /* Banner Mitra / Social Proof Proporsional 300x65 px (Responsif 4 Kolom Menyamping) */
+    .partner-banner-card {
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 300 / 65;
+    }
+
+    /* Rasio Foto Produk 1:1 */
+    .aspect-square-box {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* Custom Scrollbar Halus */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f8fafc;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 999px;
+    }
+
+    .modal-scrollbar-hidden,
+    .no-scrollbar {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .modal-scrollbar-hidden::-webkit-scrollbar,
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    button {
+      font-family: inherit;
+      -webkit-tap-highlight-color: transparent;
+    }
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline-offset: 2px;
+    }
+    button.tg-gradient-bg {
+      background: #1d4ed8 !important;
+      box-shadow: 0 4px 10px rgba(29, 78, 216, 0.16);
+    }
+    .tg-gradient-text {
+      background: none !important;
+      color: #1d4ed8 !important;
+      -webkit-text-fill-color: #1d4ed8 !important;
+    }
+    .tg-gradient-border::before {
+      background: #2563eb;
+      opacity: 0.16;
+    }
+  </style>
+</head>
+<body>
+
+<div id="toop-grafika-root">
+  <!-- ========================================================================
+       DESKTOP FIXED SIDEBAR
+       ======================================================================== -->
+  <aside id="desktop-sidebar" class="hidden flex-col justify-between bg-white border-r border-slate-200/80 p-5 shadow-sm">
+    <div>
+      <!-- Brand Logo -->
+      <button type="button" onclick="goHome()" aria-label="Kembali ke katalog produk" class="w-full text-left flex items-center gap-3 pb-5 mb-5 border-b border-slate-100 rounded-xl focus-visible:outline">
+        <div class="w-11 h-11 rounded-xl overflow-hidden bg-slate-50 border border-slate-200 flex items-center justify-center shadow-md shrink-0">
+          <img
+            alt="toop Grafika Logo"
+            class="w-full h-full object-cover"
+            id="sidebar-logo-img"
+            src=""
+            onerror="this.src='https://placehold.co/100x100/1d4ed8/ffffff?text=tG'"
+          />
+        </div>
+        <div>
+          <h1 class="font-display font-extrabold text-lg tracking-tight text-slate-900 leading-none">toop Grafika</h1>
+          <span class="text-[11px] font-medium text-slate-500">Digital Print & Creative</span>
+        </div>
+      </button>
+
+      <!-- Status Role Card -->
+      <div id="sidebar-role-badge" class="mb-6 p-3.5 rounded-2xl border border-slate-200/80 bg-slate-50/70">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-[11px] uppercase tracking-wider font-bold text-slate-400">Mode Akses</span>
+          <span id="role-pill-desktop" class="px-2 py-0.5 text-[11px] font-bold rounded-full bg-blue-100 text-blue-700">Pelanggan Umum</span>
+        </div>
+        <p id="role-desc-desktop" class="text-xs text-slate-600 font-medium truncate">Harga Reguler Aktif</p>
+      </div>
+
+      <!-- Navigasi Utama -->
+      <nav class="space-y-1.5" id="desktop-nav-links">
+        <button onclick="switchTab('catalog')" data-tab="catalog" class="nav-btn w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition-all bg-slate-900 text-white shadow-sm">
+          <i data-lucide="layout-grid" class="w-4 h-4"></i>
+          <span>Katalog Produk</span>
+        </button>
+
+        <button onclick="switchTab('favorites')" data-tab="favorites" class="nav-btn w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-all">
+          <div class="flex items-center gap-3">
+            <i data-lucide="heart" class="w-4 h-4"></i>
+            <span>Favorit & Checkout</span>
+          </div>
+          <span id="fav-badge-desktop" class="px-2 py-0.5 text-xs font-bold rounded-full bg-red-100 text-red-600">0</span>
+        </button>
+
+        <button onclick="switchTab('partners')" data-tab="partners" class="nav-btn w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-all">
+          <i data-lucide="award" class="w-4 h-4"></i>
+          <span>Mitra & Pelanggan</span>
+        </button>
+
+        <!-- Menu Khusus Admin (Muncul saat Admin Login) -->
+        <button id="nav-admin-desktop" onclick="switchTab('admin')" data-tab="admin" class="nav-btn hidden w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition-all">
+          <i data-lucide="shield-check" class="w-4 h-4"></i>
+          <span>Panel Admin</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Tombol Akses Akun (Reseller / Admin / Logout) -->
+    <div class="pt-4 border-t border-slate-100 space-y-2">
+      <div id="connection-badge" class="text-[11px] text-center py-1.5 px-2 rounded-lg bg-slate-100 text-slate-600 border border-slate-200 font-medium">
+        Menghubungkan Database...
+      </div>
+      <button id="btn-auth-desktop" onclick="openAuthModal()" class="w-full py-2.5 px-4 rounded-xl tg-gradient-bg text-white text-xs font-bold shadow-md hover:opacity-95 transition flex items-center justify-center gap-2">
+        <i data-lucide="log-in" class="w-4 h-4"></i>
+        <span>Login Reseller / Admin</span>
+      </button>
+      <button id="btn-logout-desktop" onclick="handleLogout()" class="hidden w-full py-2.5 px-4 rounded-xl bg-slate-100 text-slate-700 hover:bg-red-50 hover:text-red-600 text-xs font-bold transition flex items-center justify-center gap-2">
+        <i data-lucide="log-out" class="w-4 h-4"></i>
+        <span>Keluar Akun</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       MOBILE FLOATING BOTTOM NAVIGATION BAR
+       ======================================================================== -->
+  <nav id="mobile-bottom-nav" class="hidden glass-panel rounded-2xl shadow-xl px-2 py-2 items-center justify-around border border-slate-200/90">
+    <button onclick="switchTab('catalog')" data-tab="catalog" class="mob-nav-btn flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-blue-700 font-bold text-[11px] gap-1">
+      <i data-lucide="layout-grid" class="w-5 h-5"></i>
+      <span>Katalog</span>
+    </button>
+
+    <button onclick="switchTab('favorites')" data-tab="favorites" class="mob-nav-btn relative flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-slate-500 font-semibold text-[11px] gap-1">
+      <i data-lucide="heart" class="w-5 h-5"></i>
+      <span>Favorit</span>
+      <span id="fav-badge-mobile" class="absolute top-0.5 right-2 w-4 h-4 flex items-center justify-center text-[10px] font-bold rounded-full bg-red-600 text-white">0</span>
+    </button>
+
+    <button onclick="switchTab('partners')" data-tab="partners" class="mob-nav-btn flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-slate-500 font-semibold text-[11px] gap-1">
+      <i data-lucide="award" class="w-5 h-5"></i>
+      <span>Mitra</span>
+    </button>
+
+    <button id="nav-admin-mobile" onclick="switchTab('admin')" data-tab="admin" class="mob-nav-btn hidden flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-emerald-700 font-bold text-[11px] gap-1">
+      <i data-lucide="shield-check" class="w-5 h-5"></i>
+      <span>Admin</span>
+    </button>
+
+    <button id="btn-auth-mobile" onclick="openAuthModal()" class="flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-slate-600 font-semibold text-[11px] gap-1">
+      <i data-lucide="user-circle" class="w-5 h-5"></i>
+      <span id="mob-auth-label">Akun</span>
+    </button>
+  </nav>
+
+  <!-- ========================================================================
+       MAIN CONTENT AREA
+       ======================================================================== -->
+  <main id="main-content-wrapper" class="flex-1 min-h-screen bg-white flex flex-col justify-between">
+    <div>
+      <!-- Top Header Mobile & Desktop Banner -->
+      <header class="sticky top-0 z-30 glass-panel border-b border-slate-200/70 px-4 sm:px-8 py-3.5">
+        <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
+          <!-- Logo Mobile -->
+          <button type="button" onclick="goHome()" aria-label="Kembali ke katalog produk" class="flex items-center gap-2.5 text-left rounded-xl focus-visible:outline md:hidden">
+            <div class="w-9 h-9 rounded-xl overflow-hidden bg-slate-50 border border-slate-200 flex items-center justify-center shadow shrink-0">
+              <img
+                alt="toop Grafika Logo"
+                class="w-full h-full object-cover"
+                id="mobile-logo-img"
+                src=""
+                onerror="this.src='https://placehold.co/100x100/1d4ed8/ffffff?text=tG'"
+              />
+            </div>
+            <div>
+              <span class="block font-display font-extrabold text-base text-slate-900 leading-tight">toop Grafika</span>
+              <span id="role-pill-mobile" class="text-[10px] font-bold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded">Pelanggan Umum</span>
+            </div>
+          </button>
+
+          <!-- Desktop Page Title -->
+          <div class="hidden md:block">
+            <h2 id="header-page-title" class="font-display font-extrabold text-xl text-slate-900">Katalog Produk & Layanan</h2>
+            <p class="text-xs text-slate-500">Pilih produk cetak berkualitas tinggi dengan estimasi harga instan</p>
+          </div>
+
+          <!-- Status Pengguna Aktif (Hanya tampil saat sudah login) -->
+          <div class="flex items-center gap-2">
+            <div id="active-user-chip" class="hidden items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span id="active-user-name">Reseller</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ======================================================================
+           TAB 1: KATALOG PRODUK
+           ====================================================================== -->
+      <section id="tab-catalog" class="tab-section max-w-6xl mx-auto px-4 sm:px-8 pt-6">
+        <!-- Hero Banner Gradasi Aurora Biru-Merah-Hijau -->
+        <div id="catalog-hero" data-theme="aurora" class="hero-aurora is-moving rounded-2xl tg-gradient-bg p-6 sm:p-8 text-white shadow-lg mb-6 relative overflow-hidden">
+          <div class="relative z-10">
+            <span class="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold tracking-wide mb-3">
+              PERCETAKAN MODERN & DIGITAL PRINTING
+            </span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl mb-2 leading-tight max-w-2xl">
+              Wujudkan Desain Terbaik Anda Bersama toop Grafika
+            </h2>
+            <p class="text-white/90 text-xs sm:text-sm mb-5 leading-relaxed max-w-2xl">
+              Kualitas cetak presisi tinggi untuk kebutuhan bisnis, promosi, hingga kemasan. Tersedia harga khusus bagi mitra Reseller terdaftar.
+            </p>
+
+            <!-- Quick Search Bar -->
+            <div class="relative w-full search-light-border">
+              <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 z-20"></i>
+              <input
+                type="text"
+                id="quick-search-input"
+                oninput="handleSearchProducts(this.value)"
+                placeholder="Cari produk cepat disini ! #CariAjaDulu #GRATISS"
+                class="relative z-10 w-full pl-11 pr-4 py-3 rounded-2xl bg-white text-slate-900 placeholder-slate-400 text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-white/80"
+              />
+            </div>
+
+            <!-- Pintasan Daftar Mandiri Reseller -->
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-white/95">
+              <span>Punya usaha percetakan atau desain grafis?</span>
+              <button type="button" onclick="openResellerRegisterModal()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-blue-800 font-bold shadow-sm hover:bg-blue-50 transition">
+                <i data-lucide="user-plus" class="w-3.5 h-3.5"></i>
+                <span>Daftar Secara Mandiri untuk Reseller</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Kategori -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-5 no-scrollbar" id="category-filter-bar">
+          <button onclick="filterByCategory('Semua')" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white whitespace-nowrap transition">
+            Semua Produk
+          </button>
+          <button onclick="filterByCategory('Banner & Display')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+            Banner & Display
+          </button>
+          <button onclick="filterByCategory('Kartu & Dokumen')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+            Kartu & Dokumen
+          </button>
+          <button onclick="filterByCategory('Stiker & Kemasan')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+            Stiker & Kemasan
+          </button>
+          <button onclick="filterByCategory('KTA PVC')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+            KTA PVC
+          </button>
+          <button onclick="filterByCategory('KTA RFID')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+            KTA RFID
+          </button>
+          <button onclick="filterByCategory('Stiker Kertas')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+            Stiker Kertas
+          </button>
+          <button onclick="filterByCategory('Stiker Plastik')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+            Stiker Plastik
+          </button>
+          <button onclick="filterByCategory('Lanyard 1 Sisi')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+            Lanyard 1 Sisi
+          </button>
+          <button onclick="filterByCategory('Lanyard 2 Sisi')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+            Lanyard 2 Sisi
+          </button>
+          <button onclick="filterByCategory('Stempel Kayu')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+            Stempel Kayu
+          </button>
+        </div>
+
+        <!-- Grid Katalog Produk -->
+        <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
+          <!-- Diisi secara dinamis oleh JS -->
+        </div>
+
+        <!-- Empty Search State -->
+        <div id="empty-catalog-state" class="hidden text-center py-16">
+          <div class="w-16 h-16 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-3">
+            <i data-lucide="package-search" class="w-8 h-8"></i>
+          </div>
+          <h3 class="font-display font-bold text-slate-800 text-base">Produk tidak ditemukan</h3>
+          <p class="text-xs text-slate-500 mt-1">Coba kata kunci pencarian lain atau reset filter kategori.</p>
+        </div>
+
+        <!-- Section Mitra / Social Proof di Bawah Katalog (4 Gambar Menyamping) -->
+        <div class="mt-14 pt-8 border-t border-slate-200/80">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5">
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-wider tg-gradient-text">Dipercaya Ratusan Klien</span>
+              <h3 class="font-display font-extrabold text-lg text-slate-900">Pelanggan & Mitra Bisnis toop Grafika</h3>
+            </div>
+            <button onclick="switchTab('partners')" class="text-xs font-bold text-blue-700 hover:underline self-start sm:self-auto">
+              Lihat Semua Mitra &rarr;
+            </button>
+          </div>
+          <div id="footer-partners-strip" class="grid grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+            <!-- Diisi banner mitra 300x65 px (4 kolom menyamping) -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 2: FAVORIT & CHECKOUT WHATSAPP
+           ====================================================================== -->
+      <section id="tab-favorites" class="tab-section hidden max-w-6xl mx-auto px-4 sm:px-8 pt-6">
+        <div class="mb-6">
+          <h2 class="font-display font-extrabold text-2xl text-slate-900">Daftar Favorit & Rangkuman Pesanan</h2>
+          <p class="text-xs sm:text-sm text-slate-500">Atur jumlah pesanan, masukkan kode kupon diskon, dan kirim langsung ke WhatsApp admin.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+          <!-- Daftar Item Favorit -->
+          <div class="lg:col-span-2 space-y-3" id="favorites-list-container">
+            <!-- Diisi dinamis -->
+          </div>
+
+          <!-- Ringkasan Kalkulasi & Checkout WA -->
+          <div class="lg:col-span-1">
+            <div class="tg-gradient-border p-5 shadow-md">
+              <h3 class="font-display font-extrabold text-base text-slate-900 mb-4 flex items-center gap-2">
+                <i data-lucide="calculator" class="w-4 h-4 text-blue-700"></i>
+                <span>Estimasi Total Pesanan</span>
+              </h3>
+
+              <!-- Input Kupon (Hanya aktif untuk User / Pelanggan Umum) -->
+              <div id="checkout-coupon-box" class="mb-4 pb-4 border-b border-slate-100">
+                <label class="block text-xs font-bold text-slate-700 mb-1.5">Kode Kupon Diskon (1x Pakai)</label>
+                <div class="flex gap-2">
+                  <input
+                    type="text"
+                    id="checkout-coupon-input"
+                    placeholder="Contoh: TOOPHEMAT10"
+                    class="flex-1 px-3 py-2 rounded-xl border border-slate-200 text-xs font-bold uppercase focus:outline-none focus:border-blue-600"
+                  />
+                  <button onclick="applyCheckoutCoupon()" class="px-3.5 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-slate-800 transition">
+                    Pakai
+                  </button>
+                </div>
+                <p id="checkout-coupon-feedback" class="text-[11px] mt-1.5 hidden"></p>
+              </div>
+
+              <!-- Rincian Angka -->
+              <div class="space-y-2.5 text-xs mb-5">
+                <div class="flex justify-between text-slate-600">
+                  <span>Subtotal Produk</span>
+                  <span id="summary-subtotal" class="font-bold text-slate-900">Rp 0</span>
+                </div>
+                <div class="flex justify-between text-emerald-600">
+                  <span>Potongan Kupon</span>
+                  <span id="summary-discount" class="font-bold">- Rp 0</span>
+                </div>
+                <div class="pt-2.5 border-t border-slate-200 flex justify-between items-center text-sm">
+                  <span class="font-bold text-slate-900">Estimasi Total</span>
+                  <span id="summary-total" class="font-display font-extrabold text-lg tg-gradient-text">Rp 0</span>
+                </div>
+              </div>
+
+              <!-- Nama Pemesan -->
+              <div class="mb-4">
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nama Pemesan / Instansi</label>
+                <input
+                  type="text"
+                  id="checkout-customer-name"
+                  placeholder="Masukkan nama Anda..."
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-medium focus:outline-none focus:border-blue-600"
+                />
+              </div>
+
+              <button onclick="checkoutViaWhatsApp()" class="w-full py-3.5 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-600/20 transition flex items-center justify-center gap-2">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>Pesan via WhatsApp</span>
+              </button>
+              <p class="text-[10px] text-slate-400 text-center mt-2.5">
+                *Jika menggunakan kupon, kupon otomatis hangus setelah tombol diklik.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 3: MITRA & PELANGGAN (SOCIAL PROOF)
+           ====================================================================== -->
+      <section id="tab-partners" class="tab-section hidden max-w-6xl mx-auto px-4 sm:px-8 pt-6">
+        <div class="mb-6">
+          <h2 class="font-display font-extrabold text-2xl text-slate-900 mt-2">Mitra & Pelanggan Setia toop Grafika</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">Berbagai perusahaan, UMKM, dan instansi yang mempercayakan kebutuhan cetaknya kepada kami.</p>
+        </div>
+
+        <div id="all-partners-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 justify-items-center">
+          <!-- Diisi banner mitra 300x65 px (4 gambar menyamping) -->
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 4: PANEL ADMIN (KHUSUS LOGIN ADMIN)
+           ====================================================================== -->
+      <section id="tab-admin" class="tab-section hidden max-w-6xl mx-auto px-4 sm:px-8 pt-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200">
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 text-[11px] font-bold">ADMIN WORKSPACE</span>
+            <h2 class="font-display font-extrabold text-2xl text-slate-900 mt-1">Manajemen Toko toop Grafika</h2>
+          </div>
+
+          <!-- Sub-Tab Admin -->
+          <div class="flex flex-wrap gap-2">
+            <button onclick="switchAdminSubTab('products')" class="admin-sub-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white">
+              Produk & Harga
+            </button>
+            <button onclick="switchAdminSubTab('coupons')" class="admin-sub-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700">
+              Kupon Diskon
+            </button>
+            <button onclick="switchAdminSubTab('resellers')" class="admin-sub-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700">
+              Akun Reseller
+            </button>
+            <button onclick="switchAdminSubTab('faqs')" class="admin-sub-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700">
+              FAQ Reseller
+            </button>
+            <button onclick="switchAdminSubTab('partners')" class="admin-sub-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700">
+              Mitra (300x65)
+            </button>
+          </div>
+        </div>
+
+        <!-- SUB-TAB ADMIN 1: MANAJEMEN PRODUK -->
+        <div id="admin-sub-products" class="admin-sub-panel space-y-6">
+          <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-5">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <h3 id="form-product-title" class="font-display font-bold text-base text-slate-900">Tambah Produk Baru</h3>
+              <span class="text-[11px] font-semibold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-200">
+                Mendukung URL Gambar Langsung & Link Share Google Drive
+              </span>
+            </div>
+            <form id="admin-product-form" onsubmit="saveProductAdmin(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="hidden" id="prod-id" />
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nama Produk *</label>
+                <input type="text" id="prod-name" required placeholder="Contoh: X-Banner Flexi 60x160 cm" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Kategori *</label>
+                <select id="prod-category" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium">
+                  <option value="Banner & Display">Banner & Display</option>
+                  <option value="Kartu & Dokumen">Kartu & Dokumen</option>
+                  <option value="Stiker & Kemasan">Stiker & Kemasan</option>
+                  <option value="KTA PVC">KTA PVC</option>
+                  <option value="KTA RFID">KTA RFID</option>
+                  <option value="Stiker Kertas">Stiker Kertas</option>
+                  <option value="Stiker Plastik">Stiker Plastik</option>
+                  <option value="Lanyard 1 Sisi">Lanyard 1 Sisi</option>
+                  <option value="Lanyard 2 Sisi">Lanyard 2 Sisi</option>
+                  <option value="Stempel Kayu">Stempel Kayu</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Harga Pelanggan Umum (Rp) *</label>
+                <input type="number" id="prod-price-general" required min="100" placeholder="85000" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-emerald-700 mb-1">Harga Khusus Reseller (Rp) *</label>
+                <input type="number" id="prod-price-reseller" required min="100" placeholder="65000" class="w-full px-3.5 py-2.5 rounded-xl border border-emerald-300 bg-white text-xs font-medium" />
+              </div>
+              <div class="sm:col-span-2">
+                <label class="block text-xs font-bold text-slate-700 mb-1">Deskripsi Produk *</label>
+                <textarea id="prod-desc" rows="2" required placeholder="Spesifikasi bahan, ukuran, estimasi pengerjaan..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium"></textarea>
+              </div>
+              <div class="sm:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-600 mb-1">Foto 1 (URL / Google Drive) *</label>
+                  <input type="url" id="prod-img-1" onchange="autoFormatDriveInput(this)" required placeholder="https://drive.google.com/file/d/..." class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs" />
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-600 mb-1">Foto 2 (URL / Google Drive)</label>
+                  <input type="url" id="prod-img-2" onchange="autoFormatDriveInput(this)" placeholder="https://drive.google.com/file/d/..." class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs" />
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-600 mb-1">Foto 3 (URL / Google Drive)</label>
+                  <input type="url" id="prod-img-3" onchange="autoFormatDriveInput(this)" placeholder="https://drive.google.com/file/d/..." class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs" />
+                </div>
+              </div>
+              <div class="sm:col-span-2 flex items-center gap-2 pt-2">
+                <button type="submit" class="px-5 py-2.5 rounded-xl tg-gradient-bg text-white text-xs font-bold shadow">
+                  Simpan Produk
+                </button>
+                <button type="button" onclick="resetProductForm()" class="px-4 py-2.5 rounded-xl bg-slate-200 text-slate-700 text-xs font-bold">
+                  Reset Form
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Daftar Produk Admin -->
+          <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold border-b border-slate-200">
+                <tr>
+                  <th class="p-3.5">Produk</th>
+                  <th class="p-3.5">Harga Umum</th>
+                  <th class="p-3.5">Harga Reseller</th>
+                  <th class="p-3.5 text-right">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="admin-products-tbody" class="divide-y divide-slate-100">
+                <!-- Diisi JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SUB-TAB ADMIN 2: MANAJEMEN KUPON -->
+        <div id="admin-sub-coupons" class="admin-sub-panel hidden space-y-6">
+          <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-5">
+            <h3 class="font-display font-bold text-base text-slate-900 mb-4">Buat Kupon Diskon Sekali Pakai</h3>
+            <form onsubmit="saveCouponAdmin(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-3 items-end">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Kode Kupon *</label>
+                <input type="text" id="coupon-code" required placeholder="PROMO2026" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-bold uppercase" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Jenis Potongan</label>
+                <select id="coupon-type" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium">
+                  <option value="fixed">Nominal Rupiah (Rp)</option>
+                  <option value="percent">Persentase (%)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nilai Diskon *</label>
+                <input type="number" id="coupon-value" required min="1" placeholder="15000 atau 10" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium" />
+              </div>
+              <button type="submit" class="py-2.5 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-slate-800">
+                + Tambah Kupon
+              </button>
+            </form>
+          </div>
+
+          <div id="admin-coupons-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Diisi JS -->
+          </div>
+        </div>
+
+        <!-- SUB-TAB ADMIN 3: MANAJEMEN AKUN RESELLER -->
+        <div id="admin-sub-resellers" class="admin-sub-panel hidden space-y-6">
+          <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-5">
+            <h3 class="font-display font-bold text-base text-slate-900 mb-4">Daftarkan Akun Reseller Baru</h3>
+            <form onsubmit="saveResellerAdmin(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-3 items-end">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nama Toko / Reseller *</label>
+                <input type="text" id="res-shop" required placeholder="Berkah Print" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Username Login *</label>
+                <input type="text" id="res-username" required placeholder="reseller02" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Password *</label>
+                <input type="text" id="res-password" required placeholder="rahasia123" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs" />
+              </div>
+              <button type="submit" class="py-2.5 px-4 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700">
+                + Simpan Reseller
+              </button>
+            </form>
+          </div>
+
+          <div id="admin-resellers-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Diisi JS -->
+          </div>
+        </div>
+
+        <!-- SUB-TAB ADMIN 4: MANAJEMEN FAQ PENDAFTARAN RESELLER -->
+        <div id="admin-sub-faqs" class="admin-sub-panel hidden space-y-6">
+          <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-5">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <h3 id="form-faq-title" class="font-display font-bold text-base text-slate-900">Tambah Keterangan / FAQ Pendaftaran Reseller</h3>
+              <span class="text-[11px] font-semibold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-200">
+                Tampil otomatis di modal Daftar Mandiri Reseller
+              </span>
+            </div>
+            <form id="admin-faq-form" onsubmit="saveFaqAdmin(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-3 items-end">
+              <input type="hidden" id="faq-id" />
+              <div class="sm:col-span-3">
+                <label class="block text-xs font-bold text-slate-700 mb-1">Pertanyaan / Judul Keterangan *</label>
+                <input type="text" id="faq-question" required placeholder="Contoh: Apa keuntungan menjadi Mitra Reseller?" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Urutan Tampil</label>
+                <input type="number" id="faq-order" min="1" value="1" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium" />
+              </div>
+              <div class="sm:col-span-4">
+                <label class="block text-xs font-bold text-slate-700 mb-1">Jawaban / Isi Keterangan *</label>
+                <textarea id="faq-answer" rows="2" required placeholder="Tuliskan penjelasan lengkap untuk calon reseller..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium"></textarea>
+              </div>
+              <div class="sm:col-span-4 flex items-center gap-2 pt-1">
+                <button type="submit" class="px-5 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold shadow">
+                  Simpan FAQ
+                </button>
+                <button type="button" onclick="resetFaqForm()" class="px-4 py-2.5 rounded-xl bg-slate-200 text-slate-700 text-xs font-bold">
+                  Reset Form
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div id="admin-faqs-list" class="space-y-3">
+            <!-- Diisi JS -->
+          </div>
+        </div>
+
+        <!-- SUB-TAB ADMIN 5: MANAJEMEN MITRA (300x65 PX) -->
+        <div id="admin-sub-partners" class="admin-sub-panel hidden space-y-6">
+          <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-5">
+            <h3 class="font-display font-bold text-base text-slate-900 mb-4">Tambah Banner Mitra / Pelanggan (Rasio 300x65 px)</h3>
+            <form onsubmit="savePartnerAdmin(event)" class="grid grid-cols-1 sm:grid-cols-3 gap-3 items-end">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nama Perusahaan / Usaha *</label>
+                <input type="text" id="partner-name" required placeholder="PT Maju Kreatif Nusantara" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">URL Gambar / Link Google Drive (300x65) *</label>
+                <input type="url" id="partner-logo" onchange="autoFormatDriveInput(this)" required placeholder="https://drive.google.com/file/d/..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs" />
+              </div>
+              <button type="submit" class="py-2.5 px-4 rounded-xl bg-blue-700 text-white text-xs font-bold hover:bg-blue-800">
+                + Tambah Mitra
+              </button>
+            </form>
+          </div>
+
+          <div id="admin-partners-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Diisi JS -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ======================================================================
+         FOOTER DENGAN JARAK & COPYRIGHT BADGE
+         ====================================================================== -->
+    <footer class="mt-20 pt-8 pb-10 border-t border-slate-200/80 bg-slate-50/50 text-center px-4">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div class="font-display font-bold text-slate-800">
+          &copy; 2020-2026 @toop Grafika. Hak Cipta Dilindungi.
+        </div>
+        <div class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm font-medium">
+          <span>dibuat dengan</span>
+          <svg class="w-4 h-4 text-red-600 fill-current inline-block" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span>di</span>
+          <span class="text-base" title="Indonesia">🇮🇩</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ========================================================================
+       MODAL 1: DETAIL PRODUK (3 FOTO 1:1, COUNTER, KUPON, FAVORIT)
+       ======================================================================== -->
+  <div id="product-detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto modal-scrollbar-hidden shadow-2xl border border-slate-200">
+      <div class="sticky top-0 bg-white/90 backdrop-blur-md px-5 py-3.5 border-b border-slate-100 flex items-center justify-between z-10">
+        <span id="modal-prod-category" class="px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 text-[11px] font-bold">Kategori</span>
+        <button onclick="closeProductModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="p-5 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <div class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 mb-3">
+            <img alt="Produk" class="aspect-square-box" id="modal-main-image" src="" onerror="this.src='https://placehold.co/600x600/1d4ed8/ffffff?text=toop+Grafika'" />
+          </div>
+          <div id="modal-thumbnails" class="grid grid-cols-3 gap-2"></div>
+        </div>
+
+        <div class="flex flex-col justify-between">
+          <div>
+            <h3 id="modal-prod-title" class="font-display font-extrabold text-xl text-slate-900 mb-2">Nama Produk</h3>
+
+            <div class="mb-3 p-3 rounded-2xl bg-slate-50 border border-slate-200/80">
+              <div id="modal-price-general-old" class="hidden text-xs text-slate-400 line-through">Rp 0</div>
+              <div class="flex items-baseline gap-2">
+                <span id="modal-prod-price" class="font-display font-extrabold text-2xl tg-gradient-text">Rp 0</span>
+                <span id="modal-price-label" class="text-[11px] font-bold text-slate-500">/ pcs</span>
+              </div>
+            </div>
+
+            <p id="modal-prod-desc" class="text-xs text-slate-600 leading-relaxed mb-4">Deskripsi lengkap produk.</p>
+
+            <div class="mb-4">
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Estimasi Jumlah Pesanan</label>
+              <div class="flex items-center gap-3">
+                <div class="inline-flex items-center border border-slate-300 rounded-xl overflow-hidden">
+                  <button onclick="updateModalQty(-1)" class="w-9 h-9 flex items-center justify-center bg-slate-50 hover:bg-slate-100 font-bold text-slate-700">-</button>
+                  <input type="number" id="modal-qty-input" value="1" min="1" onchange="recalcModalSubtotal()" class="w-14 text-center text-sm font-bold text-slate-900 focus:outline-none" />
+                  <button onclick="updateModalQty(1)" class="w-9 h-9 flex items-center justify-center bg-slate-50 hover:bg-slate-100 font-bold text-slate-700">+</button>
+                </div>
+                <div class="text-xs">
+                  <span class="text-slate-400 block">Estimasi Subtotal:</span>
+                  <span id="modal-live-subtotal" class="font-extrabold text-slate-900 text-sm">Rp 0</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="modal-coupon-section" class="mb-5">
+              <label class="block text-xs font-bold text-slate-700 mb-1">Punya Kode Kupon Diskon?</label>
+              <div class="flex gap-2">
+                <input type="text" id="modal-coupon-input" placeholder="Kode kupon..." class="flex-1 px-3 py-2 rounded-xl border border-slate-200 text-xs font-bold uppercase" />
+                <button onclick="previewCouponInModal()" class="px-3 py-2 rounded-xl bg-slate-800 text-white text-xs font-bold">Cek</button>
+              </div>
+              <p id="modal-coupon-msg" class="text-[11px] mt-1 hidden"></p>
+            </div>
+          </div>
+
+          <button onclick="addCurrentProductToFavorites()" class="w-full py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+            <i data-lucide="heart" class="w-4 h-4"></i>
+            <span>Tambah ke Favorit</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 2: HYBRID LOGIN (RESELLER & ADMIN)
+       ======================================================================== -->
+  <div id="auth-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl overflow-hidden bg-slate-50 border border-slate-200 flex items-center justify-center shadow shrink-0">
+            <img
+              alt="toop Grafika Logo"
+              class="w-full h-full object-cover"
+              id="auth-modal-logo-img"
+              src=""
+              onerror="this.src='https://placehold.co/100x100/1d4ed8/ffffff?text=tG'"
+            />
+          </div>
+          <div>
+            <h3 class="font-display font-extrabold text-base text-slate-900">Portal Akses Akun</h3>
+            <p class="text-[11px] text-slate-500">Pilih tipe akses Reseller atau Admin</p>
+          </div>
+        </div>
+        <button onclick="closeAuthModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2 p-1 bg-slate-100 rounded-xl mb-5">
+        <button id="tab-login-reseller" onclick="switchAuthTab('reseller')" class="py-2 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm">
+          Login Reseller
+        </button>
+        <button id="tab-login-admin" onclick="switchAuthTab('admin')" class="py-2 rounded-lg text-xs font-semibold text-slate-600">
+          Login Admin
+        </button>
+      </div>
+
+      <form id="form-login-reseller" onsubmit="handleResellerLogin(event)" class="space-y-3.5">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Username / ID Reseller</label>
+          <input type="text" id="login-res-user" required placeholder="Contoh: namapercetakan@tgrafika.com" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Password Reseller</label>
+          <input type="password" id="login-res-pass" required placeholder="••••••" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium" />
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl tg-gradient-bg text-white text-xs font-bold shadow-md">
+          Masuk Sebagai Reseller
+        </button>
+
+        <div class="pt-3 border-t border-slate-100 space-y-2.5 text-center">
+          <p class="text-[11px] font-semibold text-slate-500">Belum punya akun Reseller? <code>#DaftarAjaDulu #GRATISS</code></p>
+          <button type="button" onclick="openResellerRegisterModal()" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm transition flex items-center justify-center gap-2">
+            <i data-lucide="user-plus" class="w-4 h-4"></i>
+            <span>Daftar Secara Mandiri untuk Reseller</span>
+          </button>
+          <button type="button" onclick="daftarKeAdmin()" class="text-[11px] font-bold text-blue-700 hover:underline">
+            Butuh bantuan? Hubungi Admin via WhatsApp
+          </button>
+        </div>
+      </form>
+
+      <form id="form-login-admin" onsubmit="handleAdminLogin(event)" class="hidden space-y-3.5">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Email Admin (Firebase Auth)</label>
+          <input type="email" id="login-admin-email" required placeholder="admin@tgrafika.com" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Password Admin</label>
+          <input type="password" id="login-admin-pass" required placeholder="••••••" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium" />
+        </div>
+        <div class="p-2.5 rounded-xl bg-red-100 text-slate-800 text-[11px] text-center">
+          <strong>Khusus Owner !</strong>
+          <br />
+          <code>#TanyaAjaDulu #GRATISS</code>
+        </div>
+        <button type="submit" id="btn-submit-admin" class="w-full py-3 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-md">
+          Masuk Panel Admin
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 2B: PENDAFTARAN MANDIRI RESELLER + KETERANGAN FAQ
+       ======================================================================== -->
+  <div id="reseller-register-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto modal-scrollbar-hidden shadow-2xl border border-slate-200">
+      <!-- Header Modal -->
+      <div class="sticky top-0 bg-white/95 backdrop-blur-md px-5 sm:px-6 py-4 border-b border-slate-100 flex items-center justify-between z-10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl overflow-hidden bg-slate-50 border border-slate-200 flex items-center justify-center shadow shrink-0">
+            <img
+              alt="toop Grafika Logo"
+              class="w-full h-full object-cover"
+              id="reg-modal-logo-img"
+              src=""
+              onerror="this.src='https://placehold.co/100x100/1d4ed8/ffffff?text=tG'"
+            />
+          </div>
+          <div>
+            <h3 class="font-display font-extrabold text-base sm:text-lg text-slate-900 leading-tight">Daftar Secara Mandiri untuk Reseller</h3>
+            <p class="text-[11px] text-slate-500">Isi nama percetakan Anda, akun <strong>@tgrafika.com</strong> otomatis dibuat & langsung aktif</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeResellerRegisterModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 shrink-0">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Body Modal: Form Pendaftaran + Keterangan FAQ -->
+      <div class="p-5 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- Kolom Kiri: Formulir Pendaftaran Mandiri -->
+        <form id="form-register-reseller" onsubmit="handleSelfRegisterReseller(event)" class="lg:col-span-7 space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Nama Percetakan / Usaha *</label>
+            <input
+              type="text"
+              id="reg-res-shop"
+              required
+              minlength="2"
+              maxlength="80"
+              oninput="syncResellerUsernamePreview(this.value)"
+              placeholder="Contoh: Berkah Grafika Print"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-semibold text-slate-900 focus:border-blue-600"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">ID / Email Login Otomatis (@tgrafika.com) *</label>
+            <div class="flex items-stretch rounded-xl border border-slate-300 bg-slate-50 overflow-hidden focus-within:border-blue-600 focus-within:ring-2 focus-within:ring-blue-600/20">
+              <input
+                type="text"
+                id="reg-res-prefix"
+                required
+                minlength="3"
+                oninput="sanitizeResellerPrefixInput(this)"
+                placeholder="berkahgrafikaprint"
+                class="flex-1 min-w-0 px-3.5 py-2.5 bg-white text-xs font-bold text-slate-900 focus:outline-none"
+              />
+              <span class="px-3 py-2.5 bg-blue-50 border-l border-slate-200 text-blue-700 text-xs font-extrabold flex items-center select-none shrink-0">
+                @tgrafika.com
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">
+              Otomatis terisi dari nama percetakan. Gunakan alamat ini saat login.
+            </p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Buat Password *</label>
+            <div class="relative">
+              <input
+                type="password"
+                id="reg-res-pass"
+                required
+                minlength="6"
+                oninput="validateRegisterPasswordMatch()"
+                placeholder="Minimal 6 karakter"
+                class="w-full pl-3.5 pr-10 py-2.5 rounded-xl border border-slate-300 text-xs font-medium"
+              />
+              <button type="button" onclick="toggleRegPasswordVisibility('reg-res-pass')" aria-label="Tampilkan atau sembunyikan password" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700">
+                <i data-lucide="eye" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Konfirmasi Password (Tulis Ulang) *</label>
+            <div class="relative">
+              <input
+                type="password"
+                id="reg-res-pass-confirm"
+                required
+                minlength="6"
+                oninput="validateRegisterPasswordMatch()"
+                placeholder="Ketik ulang password yang sama"
+                class="w-full pl-3.5 pr-10 py-2.5 rounded-xl border border-slate-300 text-xs font-medium"
+              />
+              <button type="button" onclick="toggleRegPasswordVisibility('reg-res-pass-confirm')" aria-label="Tampilkan atau sembunyikan konfirmasi password" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700">
+                <i data-lucide="eye" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <p id="reg-pass-match-msg" class="text-[11px] mt-1 hidden"></p>
+          </div>
+
+          <button type="submit" id="btn-submit-register-reseller" class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition flex items-center justify-center gap-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Daftar & Aktifkan Akun Reseller</span>
+          </button>
+
+          <div class="text-center pt-1">
+            <button type="button" onclick="backToLoginFromRegister()" class="text-xs font-bold text-blue-700 hover:underline">
+              Sudah punya akun Reseller? Masuk di sini
+            </button>
+          </div>
+        </form>
+
+        <!-- Kolom Kanan: Keterangan & FAQ Pendaftaran (Dapat diupdate Admin) -->
+        <div class="lg:col-span-5 bg-slate-50 border border-slate-200/90 rounded-2xl p-4 space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold uppercase tracking-wider">Info & FAQ</span>
+            <h4 class="font-display font-extrabold text-sm text-slate-900">Keterangan Pendaftaran</h4>
+          </div>
+          <div id="register-faq-list" class="space-y-2.5 max-h-80 overflow-y-auto pr-1">
+            <!-- Diisi dinamis oleh JS dari koleksi reseller_faqs -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 3: KONFIRMASI KUSTOM (PENGGANTI confirm() BROWSER)
+       ======================================================================== -->
+  <div id="confirm-modal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-slate-200">
+      <h4 id="confirm-modal-title" class="font-display font-extrabold text-base text-slate-900 mb-1.5">Konfirmasi</h4>
+      <p id="confirm-modal-msg" class="text-xs text-slate-600 mb-5 leading-relaxed">Apakah Anda yakin?</p>
+      <div class="flex items-center justify-end gap-2">
+        <button type="button" onclick="closeConfirmModal()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold">Batal</button>
+        <button type="button" id="confirm-modal-yes" class="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold">Ya, Hapus</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="scroll-top-btn" type="button" onclick="scrollCatalogToTop()" aria-label="Kembali ke atas" title="Kembali ke atas" class="hidden fixed bottom-24 md:bottom-6 right-5 z-[45] w-12 h-12 rounded-full bg-blue-700 text-white shadow-xl items-center justify-center hover:bg-blue-800 transition-transform hover:-translate-y-1">
+    <i data-lucide="arrow-up" class="w-5 h-5" aria-hidden="true"></i>
+  </button>
+  <div id="toast-container" class="fixed top-5 right-5 z-[100] flex flex-col gap-2 max-w-xs w-full pointer-events-none"></div>
+</div>
+
+<!-- ==========================================================================
+     SCRIPT MODULE (FIREBASE + AUTO SETUP + SESSION MANAGEMENT)
+     ========================================================================== -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+  import {
+    getFirestore,
+    collection,
+    doc,
+    getDocs,
+    setDoc,
+    updateDoc,
+    deleteDoc,
+    onSnapshot
+  } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+  // KONFIGURASI APLIKASI
+  const IS_PREVIEW = false; // Set true jika ingin simulasi offline tanpa Firebase
+  const WHATSAPP_ADMIN_NUMBER = "6285755863939";
+
+  // URL Logo Utama toop Grafika
+  const GLOBAL_LOGO_URL = "https://res.cloudinary.com/di3thjpd/image/upload/v1794594158/1657840686793.jpg";
+
+  // FIREBASE CONFIG toop Grafika
+  const firebaseConfig = {
+    apiKey: "AIzaSyBtggv5qmu2BJRGCOHzoXzupIMr0KttwsA",
+    authDomain: "toop-grafika.firebaseapp.com",
+    projectId: "toop-grafika",
+    storageBucket: "toop-grafika.firebasestorage.app",
+    messagingSenderId: "140579274407",
+    appId: "1:140579274407:web:21c298eb565fd08f12a582",
+    measurementId: "G-GRRMBW29GY"
+  };
+
+  let db = null;
+  let auth = null;
+  let isFirebaseConnected = false;
+
+  const appState = {
+    role: 'user',
+    currentUser: null,
+    products: [],
+    coupons: [],
+    resellers: [],
+    faqs: [],
+    partners: [],
+    favorites: [],
+    activeCoupon: null,
+    selectedCategory: 'Semua',
+    searchQuery: '',
+    modalProduct: null,
+    modalQty: 1
+  };
+
+  // Manajemen Sesi Reseller (Idle Timeout 15 Menit, Max Session 30 Menit)
+  const RESELLER_SESSION_KEY = "toopGrafikaResellerSession";
+  const RESELLER_IDLE_TIMEOUT = 15 * 60 * 1000;
+  const RESELLER_MAX_SESSION = 30 * 60 * 1000;
+  let resellerSessionTimer = null;
+
+  function readResellerSession() {
+    try {
+      return JSON.parse(sessionStorage.getItem(RESELLER_SESSION_KEY) || "null");
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function saveResellerSession(session) {
+    try {
+      sessionStorage.setItem(RESELLER_SESSION_KEY, JSON.stringify(session));
+    } catch (error) {}
+  }
+
+  function clearResellerSession() {
+    try { sessionStorage.removeItem(RESELLER_SESSION_KEY); } catch (error) {}
+    if (resellerSessionTimer) clearInterval(resellerSessionTimer);
+    resellerSessionTimer = null;
+  }
+
+  function isResellerSessionExpired(session, now = Date.now()) {
+    return !session || !Number.isFinite(session.startedAt) || !Number.isFinite(session.lastActivity) ||
+      now - session.lastActivity >= RESELLER_IDLE_TIMEOUT ||
+      now - session.startedAt >= RESELLER_MAX_SESSION;
+  }
+
+  function startResellerSession(reseller, existingSession = null) {
+    const now = Date.now();
+    const session = {
+      resellerId: reseller.id,
+      username: reseller.username,
+      startedAt: existingSession?.startedAt || now,
+      lastActivity: existingSession?.lastActivity || now
+    };
+    saveResellerSession(session);
+    if (resellerSessionTimer) clearInterval(resellerSessionTimer);
+    resellerSessionTimer = setInterval(checkResellerSession, 10000);
+  }
+
+  function checkResellerSession() {
+    if (appState.role !== "reseller") return;
+    const session = readResellerSession();
+    if (isResellerSessionExpired(session)) {
+      clearResellerSession();
+      window.handleLogout();
+    }
+  }
+
+  function trackResellerActivity() {
+    if (appState.role !== "reseller") return;
+    const session = readResellerSession();
+    if (isResellerSessionExpired(session)) {
+      checkResellerSession();
+      return;
+    }
+    session.lastActivity = Date.now();
+    saveResellerSession(session);
+  }
+
+  function restoreResellerSession() {
+    const session = readResellerSession();
+    if (!session) return;
+    if (isResellerSessionExpired(session)) {
+      clearResellerSession();
+      return;
+    }
+    const reseller = appState.resellers.find(r =>
+      (session.resellerId && r.id === session.resellerId) ||
+      (session.username && r.username === session.username)
+    );
+    if (!reseller) {
+      clearResellerSession();
+      return;
+    }
+    appState.role = "reseller";
+    appState.currentUser = reseller;
+    startResellerSession(reseller, session);
+    updateRoleUI();
+  }
+
+  // Data Awal (Seed Data) jika Firestore masih kosong atau offline fallback
+  const SEED_PRODUCTS = [
+    {
+      id: "prod-1",
+      name: "X-Banner Flexi Korea 60x160 cm",
+      category: "Banner & Display",
+      description: "Cetak X-Banner tajam anti luntur bahan Flexi Korea 440gr lengkap dengan tiang penyangga kokoh dan tas sarung.",
+      priceGeneral: 85000,
+      priceReseller: 65000,
+      images: [
+        "https://placehold.co/600x600/1d4ed8/ffffff?text=X-Banner+toop+Grafika",
+        "https://placehold.co/600x600/dc2626/ffffff?text=Detail+Bahan+Flexi",
+        "https://placehold.co/600x600/16a34a/ffffff?text=Rangka+Kokoh"
+      ]
+    },
+    {
+      id: "prod-2",
+      name: "Kartu Nama Art Carton 260gr (1 Box)",
+      category: "Kartu & Dokumen",
+      description: "Isi 100 lembar ukuran 9x5.5 cm, cetak full color 2 sisi dengan pilihan laminasi Doff atau Glossy elegan.",
+      priceGeneral: 45000,
+      priceReseller: 32000,
+      images: [
+        "https://placehold.co/600x600/0f172a/ffffff?text=Kartu+Nama+Premium",
+        "https://placehold.co/600x600/1d4ed8/ffffff?text=Laminasi+Doff"
+      ]
+    },
+    {
+      id: "prod-3",
+      name: "Stiker Vinyl Die-Cut A3+ Anti Air",
+      category: "Stiker & Kemasan",
+      description: "Stiker label kemasan tahan air dan minyak, sudah termasuk cutting pola sesuai bentuk logo Anda.",
+      priceGeneral: 25000,
+      priceReseller: 17500,
+      images: [
+        "https://placehold.co/600x600/16a34a/ffffff?text=Stiker+Vinyl+A3",
+        "https://placehold.co/600x600/dc2626/ffffff?text=Cutting+Presisi"
+      ]
+    },
+    {
+      id: "prod-4",
+      name: "Brosur Promosi A5 Art Paper 150gr (500 Lbr)",
+      category: "Kartu & Dokumen",
+      description: "Cetak brosur promosi mengkilap full color resolusi tinggi untuk kebutuhan pemasaran bisnis Anda.",
+      priceGeneral: 240000,
+      priceReseller: 195000,
+      images: [
+        "https://placehold.co/600x600/dc2626/ffffff?text=Brosur+Promosi+A5"
+      ]
+    }
+  ];
+
+  const SEED_COUPONS = [
+    { id: "coup-1", code: "TOOPHEMAT10", discountType: "percent", discountValue: 10, isUsed: false },
+    { id: "coup-2", code: "POTONG15RB", discountType: "fixed", discountValue: 15000, isUsed: false }
+  ];
+
+  const SEED_RESELLERS = [
+    { id: "res-1", username: "reseller01@tgrafika.com", password: "toop123", shopName: "Mitra Grafika Jaya", role: "reseller" }
+  ];
+
+  const SEED_FAQS = [
+    {
+      id: "faq-1",
+      order: 1,
+      question: "Apa keuntungan menjadi Mitra Reseller toop Grafika?",
+      answer: "Mitra Reseller langsung mendapatkan harga khusus lebih hemat di seluruh katalog produk cetak tanpa minimal jumlah order."
+    },
+    {
+      id: "faq-2",
+      order: 2,
+      question: "Bagaimana format ID login Reseller?",
+      answer: "Cukup ketik Nama Percetakan Anda pada kolom pendaftaran, sistem otomatis membuatkan ID login berakhiran @tgrafika.com."
+    },
+    {
+      id: "faq-3",
+      order: 3,
+      question: "Apakah akun langsung aktif setelah mendaftar?",
+      answer: "Ya! Setelah menekan tombol Daftar & Aktifkan Akun Reseller, akun Anda langsung aktif dan otomatis masuk ke mode harga Reseller."
+    }
+  ];
+
+  const SEED_PARTNERS = [
+    { id: "part-1", companyName: "PT Nusantara Kreatif Mandiri", logoUrl: "https://placehold.co/300x65/1d4ed8/ffffff?text=NUSANTARA+KREATIF" },
+    { id: "part-2", companyName: "Kopi Senja Roastery", logoUrl: "https://placehold.co/300x65/dc2626/ffffff?text=KOPI+SENJA+ROASTERY" },
+    { id: "part-3", companyName: "Agro Hijau Sejahtera", logoUrl: "https://placehold.co/300x65/16a34a/ffffff?text=AGRO+HIJAU+SEJAHTERA" },
+    { id: "part-4", companyName: "CV Surya Grafika Digital", logoUrl: "https://placehold.co/300x65/0f172a/ffffff?text=SURYA+GRAFIKA+DIGITAL" }
+  ];
+
+  // Konversi Link Share Google Drive menjadi Direct Image CDN
+  function convertGoogleDriveUrl(url) {
+    if (!url) return "";
+    const trimmed = url.trim();
+    const fileIdMatch =
+      trimmed.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/) ||
+      trimmed.match(/drive\.google\.com\/open\?id=([a-zA-Z0-9_-]+)/) ||
+      trimmed.match(/drive\.google\.com\/uc\?(?:export=view&)?id=([a-zA-Z0-9_-]+)/);
+
+    if (fileIdMatch && fileIdMatch[1]) {
+      return `https://lh3.googleusercontent.com/d/${fileIdMatch[1]}=w1000`;
+    }
+    return trimmed;
+  }
+
+  window.autoFormatDriveInput = function(inputEl) {
+    const converted = convertGoogleDriveUrl(inputEl.value);
+    if (converted !== inputEl.value.trim()) {
+      inputEl.value = converted;
+      showToast("Link Google Drive otomatis dikonversi!", "success");
+    }
+  };
+
+  function setConnectionStatus(statusText, type) {
+    const badge = document.getElementById("connection-badge");
+    if (!badge) return;
+    badge.textContent = statusText;
+    if (type === "connected") {
+      badge.className = "text-[11px] text-center py-1.5 px-2 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold";
+    } else if (type === "error") {
+      badge.className = "text-[11px] text-center py-1.5 px-2 rounded-lg bg-red-50 text-red-700 border border-red-200 font-bold";
+    } else {
+      badge.className = "text-[11px] text-center py-1.5 px-2 rounded-lg bg-amber-50 text-amber-700 border border-amber-200 font-medium";
+    }
+  }
+
+  // Helper aman untuk menyuntikkan seed data tanpa memutus koneksi utama
+  async function seedCollectionIfEmpty(colName, seedItems) {
+    try {
+      const snap = await getDocs(collection(db, colName));
+      if (snap.empty) {
+        for (const item of seedItems) {
+          await setDoc(doc(db, colName, item.id), item);
+        }
+        return true;
+      }
+    } catch (err) {
+      console.warn(`Lewati auto-seed koleksi '${colName}':`, err.message);
+    }
+    return false;
+  }
+
+  // Auto Setup Database & Real-time Sync Firestore
+  async function autoSetupDatabase() {
+    const formattedLogo = convertGoogleDriveUrl(GLOBAL_LOGO_URL);
+    ["sidebar-logo-img", "mobile-logo-img", "auth-modal-logo-img", "reg-modal-logo-img"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.src = formattedLogo;
+    });
+
+    appState.products = [...SEED_PRODUCTS];
+    appState.coupons = [...SEED_COUPONS];
+    appState.resellers = [...SEED_RESELLERS];
+    appState.faqs = [...SEED_FAQS];
+    appState.partners = [...SEED_PARTNERS];
+    renderAllUI();
+
+    if (IS_PREVIEW || firebaseConfig.apiKey === "API_KEY_ANDA") {
+      isFirebaseConnected = false;
+      setConnectionStatus(
+        firebaseConfig.apiKey === "API_KEY_ANDA" ? "Config Firebase Belum Diisi" : "Mode Preview Lokal",
+        "preview"
+      );
+      restoreResellerSession();
+      return;
+    }
+
+    try {
+      const app = initializeApp(firebaseConfig);
+      db = getFirestore(app);
+      auth = getAuth(app);
+
+      const seededProducts = await seedCollectionIfEmpty("products", SEED_PRODUCTS);
+      await seedCollectionIfEmpty("coupons", SEED_COUPONS);
+      await seedCollectionIfEmpty("users", SEED_RESELLERS);
+      await seedCollectionIfEmpty("reseller_faqs", SEED_FAQS);
+      await seedCollectionIfEmpty("partners", SEED_PARTNERS);
+
+      if (seededProducts) {
+        showToast("Database Firebase berhasil diinisialisasi otomatis!", "success");
+      }
+
+      isFirebaseConnected = true;
+      setConnectionStatus("Terhubung ke tGu.Firebase Live", "connected");
+
+      onSnapshot(
+        collection(db, "products"),
+        (snap) => {
+          appState.products = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+          renderAllUI();
+        },
+        (err) => console.warn("Listener products:", err.message)
+      );
+
+      onSnapshot(
+        collection(db, "coupons"),
+        (snap) => {
+          appState.coupons = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+          renderAdminCoupons();
+        },
+        (err) => console.warn("Listener coupons:", err.message)
+      );
+
+      onSnapshot(
+        collection(db, "users"),
+        (snap) => {
+          appState.resellers = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+          renderAdminResellers();
+          restoreResellerSession();
+        },
+        (err) => console.warn("Listener users:", err.message)
+      );
+
+      onSnapshot(
+        collection(db, "reseller_faqs"),
+        (snap) => {
+          const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+          appState.faqs = items.sort((a, b) => Number(a.order || 99) - Number(b.order || 99));
+          renderRegisterFaqs();
+          renderAdminFaqs();
+        },
+        (err) => {
+          console.warn("Listener reseller_faqs (gunakan fallback lokal):", err.message);
+          renderRegisterFaqs();
+          renderAdminFaqs();
+        }
+      );
+
+      onSnapshot(
+        collection(db, "partners"),
+        (snap) => {
+          appState.partners = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+          renderPartners();
+          renderAdminPartners();
+        },
+        (err) => console.warn("Listener partners:", err.message)
+      );
+    } catch (error) {
+      console.error("Firebase Connection Error:", error);
+      isFirebaseConnected = false;
+      setConnectionStatus("Gagal Konek Firebase (Cek Rules/Config)", "error");
+      showToast("Gagal terhubung ke tGu.Firebase: " + error.message, "error");
+      restoreResellerSession();
+    }
+  }
+
+  function formatRupiah(num) {
+    return "Rp " + Number(num || 0).toLocaleString("id-ID");
+  }
+
+  function escapeHtml(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function showToast(message, type = "info") {
+    const container = document.getElementById("toast-container");
+    if (!container) return;
+    const toast = document.createElement("div");
+    const colors = { success: "bg-emerald-600 text-white", error: "bg-red-600 text-white", info: "bg-slate-900 text-white" };
+    toast.className = `pointer-events-auto px-4 py-3 rounded-2xl shadow-xl text-xs font-semibold flex items-center justify-between gap-3 ${colors[type] || colors.info}`;
+    toast.innerHTML = `<span>${escapeHtml(message)}</span>`;
+    container.appendChild(toast);
+    setTimeout(() => toast.remove(), 3500);
+  }
+
+  // Modal Konfirmasi Kustom (Pengganti confirm() bawaan browser)
+  let confirmCallback = null;
+  window.openConfirmModal = function(title, message, onConfirm) {
+    document.getElementById("confirm-modal-title").textContent = title;
+    document.getElementById("confirm-modal-msg").textContent = message;
+    confirmCallback = onConfirm;
+    const modal = document.getElementById("confirm-modal");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+  };
+
+  window.closeConfirmModal = function() {
+    const modal = document.getElementById("confirm-modal");
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    confirmCallback = null;
+  };
+
+  document.getElementById("confirm-modal-yes")?.addEventListener("click", async () => {
+    const fn = confirmCallback;
+    closeConfirmModal();
+    if (typeof fn === "function") await fn();
+  });
+
+  window.goHome = function() {
+    window.switchTab("catalog");
+    const root = document.getElementById("toop-grafika-root");
+    root.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  function updateScrollTopButton() {
+    const root = document.getElementById("toop-grafika-root");
+    const button = document.getElementById("scroll-top-btn");
+    const catalogActive = !document.getElementById("tab-catalog").classList.contains("hidden");
+    const atBottom = root.scrollTop + root.clientHeight >= root.scrollHeight - 24;
+    button.classList.toggle("hidden", !catalogActive || !atBottom);
+    button.classList.toggle("flex", catalogActive && atBottom);
+  }
+
+  window.scrollCatalogToTop = function() {
+    document.getElementById("toop-grafika-root").scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  window.switchTab = function(tabName) {
+    document.querySelectorAll(".tab-section").forEach(sec => sec.classList.add("hidden"));
+    document.getElementById(`tab-${tabName}`).classList.remove("hidden");
+
+    const titles = {
+      catalog: "Katalog Produk & Layanan",
+      favorites: "Daftar Favorit & Checkout WhatsApp",
+      partners: "Mitra & Pelanggan toop Grafika",
+      admin: "Panel Kontrol Admin"
+    };
+    document.getElementById("header-page-title").textContent = titles[tabName] || "toop Grafika";
+
+    document.querySelectorAll(".nav-btn").forEach(btn => {
+      if (btn.dataset.tab === tabName) {
+        btn.classList.remove("text-slate-600", "hover:bg-slate-100");
+        btn.classList.add("bg-slate-900", "text-white", "shadow-sm");
+      } else {
+        btn.classList.add("text-slate-600", "hover:bg-slate-100");
+        btn.classList.remove("bg-slate-900", "text-white", "shadow-sm");
+      }
+    });
+
+    document.querySelectorAll(".mob-nav-btn").forEach(btn => {
+      if (btn.dataset.tab === tabName) {
+        btn.classList.remove("text-slate-500");
+        btn.classList.add("text-blue-700", "font-bold");
+      } else {
+        btn.classList.add("text-slate-500");
+        btn.classList.remove("text-blue-700", "font-bold");
+      }
+    });
+
+    if (tabName === "favorites") renderFavorites();
+    updateScrollTopButton();
+  };
+
+  function updateRoleUI() {
+    const rolePillDesktop = document.getElementById("role-pill-desktop");
+    const roleDescDesktop = document.getElementById("role-desc-desktop");
+    const rolePillMobile = document.getElementById("role-pill-mobile");
+    const navAdminDesktop = document.getElementById("nav-admin-desktop");
+    const navAdminMobile = document.getElementById("nav-admin-mobile");
+    const btnAuthDesktop = document.getElementById("btn-auth-desktop");
+    const btnLogoutDesktop = document.getElementById("btn-logout-desktop");
+    const btnAuthMobile = document.getElementById("btn-auth-mobile");
+    const mobAuthLabel = document.getElementById("mob-auth-label");
+    const activeUserChip = document.getElementById("active-user-chip");
+    const activeUserName = document.getElementById("active-user-name");
+    const checkoutCouponBox = document.getElementById("checkout-coupon-box");
+
+    if (appState.role === "admin") {
+      rolePillDesktop.textContent = "Administrator";
+      rolePillDesktop.className = "px-2 py-0.5 text-[11px] font-bold rounded-full bg-emerald-100 text-emerald-800";
+      roleDescDesktop.textContent = "Akses Penuh Kelola Toko";
+      rolePillMobile.textContent = "Admin";
+      navAdminDesktop.classList.remove("hidden");
+      navAdminMobile.classList.remove("hidden");
+      btnAuthDesktop.classList.add("hidden");
+      btnLogoutDesktop.classList.remove("hidden");
+      btnAuthMobile.onclick = () => handleLogout();
+      btnAuthMobile.classList.remove("text-slate-600");
+      btnAuthMobile.classList.add("text-red-600");
+      mobAuthLabel.textContent = "Keluar";
+      activeUserChip.classList.remove("hidden");
+      activeUserChip.classList.add("flex");
+      activeUserName.textContent = "Admin toop Grafika";
+      checkoutCouponBox.classList.add("hidden");
+    } else if (appState.role === "reseller") {
+      rolePillDesktop.textContent = "Mitra Reseller";
+      rolePillDesktop.className = "px-2 py-0.5 text-[11px] font-bold rounded-full bg-red-100 text-red-700";
+      roleDescDesktop.textContent = appState.currentUser?.shopName || "Harga Reseller Aktif";
+      rolePillMobile.textContent = "Reseller";
+      navAdminDesktop.classList.add("hidden");
+      navAdminMobile.classList.add("hidden");
+      btnAuthDesktop.classList.add("hidden");
+      btnLogoutDesktop.classList.remove("hidden");
+      btnAuthMobile.onclick = () => handleLogout();
+      btnAuthMobile.classList.remove("text-slate-600");
+      btnAuthMobile.classList.add("text-red-600");
+      mobAuthLabel.textContent = "Keluar";
+      activeUserChip.classList.remove("hidden");
+      activeUserChip.classList.add("flex");
+      activeUserName.textContent = appState.currentUser?.shopName || "Reseller";
+      checkoutCouponBox.classList.add("hidden");
+      appState.activeCoupon = null;
+    } else {
+      rolePillDesktop.textContent = "Pelanggan Umum";
+      rolePillDesktop.className = "px-2 py-0.5 text-[11px] font-bold rounded-full bg-blue-100 text-blue-700";
+      roleDescDesktop.textContent = "Harga Reguler Aktif";
+      rolePillMobile.textContent = "Pelanggan Umum";
+      navAdminDesktop.classList.add("hidden");
+      navAdminMobile.classList.add("hidden");
+      btnAuthDesktop.classList.remove("hidden");
+      btnLogoutDesktop.classList.add("hidden");
+      btnAuthMobile.onclick = () => openAuthModal();
+      btnAuthMobile.classList.remove("text-red-600");
+      btnAuthMobile.classList.add("text-slate-600");
+      mobAuthLabel.textContent = "Akun";
+      activeUserChip.classList.add("hidden");
+      activeUserChip.classList.remove("flex");
+      checkoutCouponBox.classList.remove("hidden");
+    }
+    renderAllUI();
+  }
+
+  window.openAuthModal = function() {
+    document.getElementById("auth-modal").classList.remove("hidden");
+    document.getElementById("auth-modal").classList.add("flex");
+    lucide.createIcons();
+  };
+
+  window.closeAuthModal = function() {
+    document.getElementById("auth-modal").classList.add("hidden");
+    document.getElementById("auth-modal").classList.remove("flex");
+  };
+
+  window.switchAuthTab = function(type) {
+    const tabRes = document.getElementById("tab-login-reseller");
+    const tabAdm = document.getElementById("tab-login-admin");
+    const formRes = document.getElementById("form-login-reseller");
+    const formAdm = document.getElementById("form-login-admin");
+
+    if (type === "reseller") {
+      tabRes.className = "py-2 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm";
+      tabAdm.className = "py-2 rounded-lg text-xs font-semibold text-slate-600";
+      formRes.classList.remove("hidden");
+      formAdm.classList.add("hidden");
+    } else {
+      tabAdm.className = "py-2 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm";
+      tabRes.className = "py-2 rounded-lg text-xs font-semibold text-slate-600";
+      formAdm.classList.remove("hidden");
+      formRes.classList.add("hidden");
+    }
+  };
+
+  // ==========================================================================
+  // PENDAFTARAN MANDIRI RESELLER (@tgrafika.com) + FAQ DINAMIS
+  // ==========================================================================
+  let isPrefixManuallyEdited = false;
+
+  function slugifyPrintingName(rawName) {
+    return String(rawName || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]/g, "")
+      .slice(0, 32);
+  }
+
+  window.openResellerRegisterModal = function() {
+    closeAuthModal();
+    isPrefixManuallyEdited = false;
+    const form = document.getElementById("form-register-reseller");
+    if (form) form.reset();
+    const msgEl = document.getElementById("reg-pass-match-msg");
+    if (msgEl) msgEl.classList.add("hidden");
+    renderRegisterFaqs();
+    const modal = document.getElementById("reseller-register-modal");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    lucide.createIcons();
+    setTimeout(() => document.getElementById("reg-res-shop")?.focus(), 60);
+  };
+
+  window.closeResellerRegisterModal = function() {
+    const modal = document.getElementById("reseller-register-modal");
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  };
+
+  window.backToLoginFromRegister = function() {
+    closeResellerRegisterModal();
+    switchAuthTab("reseller");
+    openAuthModal();
+  };
+
+  window.syncResellerUsernamePreview = function(shopName) {
+    if (isPrefixManuallyEdited) return;
+    const prefixInput = document.getElementById("reg-res-prefix");
+    if (prefixInput) {
+      prefixInput.value = slugifyPrintingName(shopName);
+    }
+  };
+
+  window.sanitizeResellerPrefixInput = function(inputEl) {
+    isPrefixManuallyEdited = inputEl.value.trim().length > 0;
+    inputEl.value = inputEl.value
+      .toLowerCase()
+      .replace(/@tgrafika\.com$/i, "")
+      .replace(/[^a-z0-9._-]/g, "")
+      .slice(0, 32);
+  };
+
+  window.toggleRegPasswordVisibility = function(inputId) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    input.type = input.type === "password" ? "text" : "password";
+  };
+
+  window.validateRegisterPasswordMatch = function() {
+    const pass = document.getElementById("reg-res-pass").value;
+    const confirmPass = document.getElementById("reg-res-pass-confirm").value;
+    const msgEl = document.getElementById("reg-pass-match-msg");
+
+    if (!confirmPass) {
+      msgEl.classList.add("hidden");
+      return false;
+    }
+
+    msgEl.classList.remove("hidden");
+    if (pass === confirmPass) {
+      msgEl.className = "text-[11px] mt-1 font-bold text-emerald-600";
+      msgEl.textContent = "Password cocok.";
+      return true;
+    } else {
+      msgEl.className = "text-[11px] mt-1 font-bold text-red-600";
+      msgEl.textContent = "Konfirmasi password belum sama. Silakan ketik ulang.";
+      return false;
+    }
+  };
+
+  window.handleSelfRegisterReseller = async function(e) {
+    e.preventDefault();
+    const shopName = document.getElementById("reg-res-shop").value.trim();
+    const prefixRaw = document.getElementById("reg-res-prefix").value.trim().toLowerCase();
+    const password = document.getElementById("reg-res-pass").value;
+    const confirmPassword = document.getElementById("reg-res-pass-confirm").value;
+    const submitBtn = document.getElementById("btn-submit-register-reseller");
+
+    if (shopName.length < 2) {
+      showToast("Nama percetakan minimal 2 karakter.", "error");
+      return;
+    }
+
+    if (!/^[a-z0-9._-]{3,}$/.test(prefixRaw)) {
+      showToast("ID login minimal 3 karakter (huruf kecil, angka, titik, atau strip).", "error");
+      return;
+    }
+
+    if (password.length < 6) {
+      showToast("Password minimal 6 karakter.", "error");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      validateRegisterPasswordMatch();
+      showToast("Password dan konfirmasi password tidak sama!", "error");
+      return;
+    }
+
+    const fullUsername = `${prefixRaw}@tgrafika.com`;
+    const isDuplicate = appState.resellers.some(r => {
+      const existing = String(r.username || "").toLowerCase();
+      return existing === fullUsername || existing === prefixRaw;
+    });
+
+    if (isDuplicate) {
+      showToast(`ID ${fullUsername} sudah terdaftar! Gunakan nama percetakan atau ID lain.`, "error");
+      return;
+    }
+
+    const id = "res-" + Date.now();
+    const newReseller = {
+      id,
+      shopName,
+      username: fullUsername,
+      password,
+      role: "reseller",
+      createdAt: new Date().toISOString()
+    };
+
+    try {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Mendaftarkan Akun...</span>`;
+
+      if (isFirebaseConnected && db) {
+        await setDoc(doc(db, "users", id), newReseller);
+      } else {
+        appState.resellers.unshift(newReseller);
+        renderAdminResellers();
+      }
+
+      appState.role = "reseller";
+      appState.currentUser = newReseller;
+      startResellerSession(newReseller);
+      closeResellerRegisterModal();
+      updateRoleUI();
+      showToast(`Pendaftaran berhasil! Selamat datang ${shopName} (${fullUsername}).`, "success");
+    } catch (err) {
+      console.error("Self Register Reseller Error:", err);
+      showToast("Gagal mendaftarkan akun: " + err.message, "error");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4"></i><span>Daftar & Aktifkan Akun Reseller</span>`;
+      lucide.createIcons();
+    }
+  };
+
+  function renderRegisterFaqs() {
+    const container = document.getElementById("register-faq-list");
+    if (!container) return;
+    const list = appState.faqs.length > 0 ? appState.faqs : SEED_FAQS;
+    container.innerHTML = list.map((item, index) => `
+      <details ${index === 0 ? "open" : ""} class="group rounded-xl bg-white border border-slate-200/90 p-3 shadow-xs">
+        <summary class="list-none cursor-pointer flex items-start justify-between gap-2 text-xs font-bold text-slate-800">
+          <span>${escapeHtml(item.question)}</span>
+          <span class="text-blue-700 font-extrabold shrink-0 group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="text-[11px] text-slate-600 leading-relaxed mt-2 pt-2 border-t border-slate-100">
+          ${escapeHtml(item.answer)}
+        </p>
+      </details>
+    `).join("");
+  }
+
+  // ==========================================================================
+  // LOGIN RESELLER & ADMIN
+  // ==========================================================================
+  window.handleResellerLogin = function(e) {
+    e.preventDefault();
+    const rawInput = document.getElementById("login-res-user").value.trim().toLowerCase();
+    const pass = document.getElementById("login-res-pass").value.trim();
+    const normalizedInput = rawInput.includes("@") ? rawInput : `${rawInput}@tgrafika.com`;
+
+    const matched = appState.resellers.find(r => {
+      if (!r.username) return false;
+      const dbUser = r.username.toLowerCase();
+      return (dbUser === rawInput || dbUser === normalizedInput) && r.password === pass;
+    });
+
+    if (matched) {
+      appState.role = "reseller";
+      appState.currentUser = matched;
+      startResellerSession(matched);
+      closeAuthModal();
+      updateRoleUI();
+      showToast(`Selamat datang, ${matched.shopName}! Harga Reseller aktif.`, "success");
+    } else {
+      showToast("Username / ID Reseller atau Password tidak ditemukan!", "error");
+    }
+  };
+
+  window.handleAdminLogin = async function(e) {
+    e.preventDefault();
+    const email = document.getElementById("login-admin-email").value.trim();
+    const password = document.getElementById("login-admin-pass").value.trim();
+    const btn = document.getElementById("btn-submit-admin");
+
+    if (!isFirebaseConnected || !auth) {
+      if (IS_PREVIEW || firebaseConfig.apiKey === "API_KEY_ANDA") {
+        clearResellerSession();
+        appState.role = "admin";
+        appState.currentUser = { email };
+        closeAuthModal();
+        updateRoleUI();
+        switchTab("admin");
+        showToast("Simulasi Admin aktif (Firebase belum terhubung).", "info");
+        return;
+      }
+      showToast("Firebase Auth belum siap. Periksa firebaseConfig Anda.", "error");
+      return;
+    }
+
+    try {
+      btn.disabled = true;
+      btn.textContent = "Memverifikasi...";
+      const cred = await signInWithEmailAndPassword(auth, email, password);
+      clearResellerSession();
+      appState.role = "admin";
+      appState.currentUser = { email: cred.user.email, uid: cred.user.uid };
+      closeAuthModal();
+      updateRoleUI();
+      switchTab("admin");
+      showToast("Login Admin Firebase berhasil!", "success");
+    } catch (err) {
+      console.error("Admin Auth Error:", err);
+      showToast("Login Gagal: " + (err.code || err.message), "error");
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Masuk Panel Admin";
+    }
+  };
+
+  window.handleLogout = async function() {
+    clearResellerSession();
+    if (auth && appState.role === "admin") {
+      try { await signOut(auth); } catch (e) {}
+    }
+    appState.role = "user";
+    appState.currentUser = null;
+    updateRoleUI();
+    switchTab("catalog");
+    showToast("Anda telah keluar akun.", "info");
+  };
+
+  // ==========================================================================
+  // KATALOG PRODUK, DETAIL MODAL, FAVORIT & WHATSAPP CHECKOUT
+  // ==========================================================================
+  window.handleSearchProducts = function(val) {
+    appState.searchQuery = val.toLowerCase().trim();
+    renderCatalog();
+  };
+
+  window.filterByCategory = function(cat) {
+    appState.selectedCategory = cat;
+    document.querySelectorAll(".cat-pill").forEach(btn => {
+      if (btn.textContent.trim().includes(cat) || (cat === 'Semua' && btn.textContent.includes('Semua'))) {
+        btn.className = "cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white whitespace-nowrap transition";
+      } else {
+        btn.className = "cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition";
+      }
+    });
+    renderCatalog();
+  };
+
+  function getEffectivePrice(product) {
+    return appState.role === "reseller" ? Number(product.priceReseller) : Number(product.priceGeneral);
+  }
+
+  function renderCatalog() {
+    const grid = document.getElementById("products-grid");
+    const emptyState = document.getElementById("empty-catalog-state");
+    if (!grid || !emptyState) return;
+
+    const filtered = appState.products.filter(p => {
+      const matchCat = appState.selectedCategory === "Semua" || p.category === appState.selectedCategory;
+      const matchQuery = (p.name || "").toLowerCase().includes(appState.searchQuery) || (p.description || "").toLowerCase().includes(appState.searchQuery);
+      return matchCat && matchQuery;
+    });
+
+    if (filtered.length === 0) {
+      grid.innerHTML = "";
+      emptyState.classList.remove("hidden");
+      return;
+    }
+    emptyState.classList.add("hidden");
+    const isReseller = appState.role === "reseller";
+
+    grid.innerHTML = filtered.map(prod => {
+      const rawImg = (prod.images && prod.images[0]) || "https://placehold.co/600x600/1d4ed8/ffffff?text=toop+Grafika";
+      const mainImg = convertGoogleDriveUrl(rawImg);
+      const activePrice = getEffectivePrice(prod);
+      const isFav = appState.favorites.some(f => f.productId === prod.id);
+
+      return `
+        <div class="group bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative overflow-hidden bg-slate-100 cursor-pointer" onclick="openProductModal('${prod.id}')">
+              <img src="${mainImg}" alt="${escapeHtml(prod.name)}" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/600x600/1d4ed8/ffffff?text=toop+Grafika'" class="aspect-square-box group-hover:scale-105 transition-transform duration-300" />
+              ${isReseller ? `<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-lg bg-emerald-600 text-white text-[10px] font-bold shadow">Harga Reseller</span>` : ""}
+              <button onclick="event.stopPropagation(); toggleQuickFavorite('${prod.id}')" class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow hover:scale-110 transition ${isFav ? 'text-red-600' : 'text-slate-500'}">
+                <i data-lucide="heart" class="w-4 h-4 ${isFav ? 'fill-current' : ''}"></i>
+              </button>
+            </div>
+            <div class="p-3.5 cursor-pointer" onclick="openProductModal('${prod.id}')">
+              <span class="text-[10px] font-bold text-blue-700 uppercase tracking-wider">${escapeHtml(prod.category)}</span>
+              <h3 class="font-display font-bold text-sm text-slate-900 mt-0.5 line-clamp-2 leading-snug">${escapeHtml(prod.name)}</h3>
+            </div>
+          </div>
+          <div class="px-3.5 pb-3.5 pt-1">
+            ${isReseller ? `<div class="text-[11px] text-slate-400 line-through">${formatRupiah(prod.priceGeneral)}</div>` : ""}
+            <div class="font-display font-extrabold text-base tg-gradient-text mb-2.5">${formatRupiah(activePrice)}</div>
+            <button onclick="openProductModal('${prod.id}')" class="w-full py-2 px-3 rounded-xl bg-slate-900 hover:bg-blue-700 text-white text-xs font-bold transition inline-flex items-center justify-center gap-1.5">
+              <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i> Detail & Pesan
+            </button>
+          </div>
+        </div>
+      `;
+    }).join("");
+    lucide.createIcons();
+  }
+
+  window.openProductModal = function(productId) {
+    const prod = appState.products.find(p => p.id === productId);
+    if (!prod) return;
+    appState.modalProduct = prod;
+    appState.modalQty = 1;
+
+    document.getElementById("modal-prod-category").textContent = prod.category;
+    document.getElementById("modal-prod-title").textContent = prod.name;
+    document.getElementById("modal-prod-desc").textContent = prod.description;
+    document.getElementById("modal-qty-input").value = 1;
+    document.getElementById("modal-coupon-input").value = "";
+    document.getElementById("modal-coupon-msg").classList.add("hidden");
+
+    document.getElementById("modal-coupon-section").classList.toggle("hidden", appState.role !== "user");
+
+    const oldPriceEl = document.getElementById("modal-price-general-old");
+    if (appState.role === "reseller") {
+      oldPriceEl.textContent = "Harga Umum: " + formatRupiah(prod.priceGeneral);
+      oldPriceEl.classList.remove("hidden");
+    } else {
+      oldPriceEl.classList.add("hidden");
+    }
+
+    document.getElementById("modal-prod-price").textContent = formatRupiah(getEffectivePrice(prod));
+    recalcModalSubtotal();
+
+    const imgs = (prod.images || []).slice(0, 3).map(u => convertGoogleDriveUrl(u));
+    if (imgs.length === 0) imgs.push("https://placehold.co/600x600/1d4ed8/ffffff?text=toop+Grafika");
+
+    document.getElementById("modal-main-image").src = imgs[0];
+    document.getElementById("modal-thumbnails").innerHTML = imgs.map((url, idx) => `
+      <button type="button" onclick="selectModalImage(${idx})" class="modal-thumbnail rounded-xl overflow-hidden border-b-4 ${idx === 0 ? 'border-blue-600' : 'border-transparent'}">
+        <img src="${url}" alt="Foto produk ${idx + 1}" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/600x600/1d4ed8/ffffff?text=toop+Grafika'" class="aspect-square-box" />
+      </button>
+    `).join("");
+
+    document.getElementById("product-detail-modal").classList.remove("hidden");
+    document.getElementById("product-detail-modal").classList.add("flex");
+    lucide.createIcons();
+  };
+
+  window.selectModalImage = function(selectedIndex) {
+    const thumbnails = document.querySelectorAll("#modal-thumbnails .modal-thumbnail");
+    const selectedThumbnail = thumbnails[selectedIndex];
+    if (!selectedThumbnail) return;
+
+    document.getElementById("modal-main-image").src = selectedThumbnail.querySelector("img").src;
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.classList.toggle("border-blue-600", index === selectedIndex);
+      thumbnail.classList.toggle("border-transparent", index !== selectedIndex);
+    });
+  };
+
+  window.closeProductModal = function() {
+    document.getElementById("product-detail-modal").classList.add("hidden");
+    document.getElementById("product-detail-modal").classList.remove("flex");
+  };
+
+  window.updateModalQty = function(delta) {
+    const input = document.getElementById("modal-qty-input");
+    let val = parseInt(input.value || "1", 10) + delta;
+    if (val < 1) val = 1;
+    input.value = val;
+    appState.modalQty = val;
+    recalcModalSubtotal();
+  };
+
+  window.recalcModalSubtotal = function() {
+    if (!appState.modalProduct) return;
+    const qty = Math.max(1, parseInt(document.getElementById("modal-qty-input").value || "1", 10));
+    appState.modalQty = qty;
+    document.getElementById("modal-live-subtotal").textContent = formatRupiah(getEffectivePrice(appState.modalProduct) * qty);
+  };
+
+  window.previewCouponInModal = function() {
+    const code = document.getElementById("modal-coupon-input").value.trim().toUpperCase();
+    const msgEl = document.getElementById("modal-coupon-msg");
+    const found = appState.coupons.find(c => c.code.toUpperCase() === code && !c.isUsed);
+    msgEl.classList.remove("hidden");
+    if (found) {
+      appState.activeCoupon = found;
+      msgEl.className = "text-[11px] mt-1 font-bold text-emerald-600";
+      msgEl.textContent = `Kupon valid! Diskon ${found.discountType === 'percent' ? found.discountValue + '%' : formatRupiah(found.discountValue)}`;
+    } else {
+      msgEl.className = "text-[11px] mt-1 font-bold text-red-600";
+      msgEl.textContent = "Kupon tidak valid atau sudah hangus.";
+    }
+  };
+
+  window.toggleQuickFavorite = function(productId) {
+    const idx = appState.favorites.findIndex(f => f.productId === productId);
+    if (idx > -1) {
+      appState.favorites.splice(idx, 1);
+      showToast("Dihapus dari favorit.", "info");
+    } else {
+      appState.favorites.push({ productId, qty: 1 });
+      showToast("Ditambahkan ke favorit!", "success");
+    }
+    updateFavBadges();
+    renderCatalog();
+  };
+
+  window.addCurrentProductToFavorites = function() {
+    if (!appState.modalProduct) return;
+    const pid = appState.modalProduct.id;
+    const qty = appState.modalQty;
+    const existing = appState.favorites.find(f => f.productId === pid);
+    if (existing) existing.qty += qty;
+    else appState.favorites.push({ productId: pid, qty });
+
+    updateFavBadges();
+    renderCatalog();
+    closeProductModal();
+    showToast("Masuk ke Daftar Favorit!", "success");
+  };
+
+  function updateFavBadges() {
+    const totalItems = appState.favorites.reduce((acc, item) => acc + item.qty, 0);
+    document.getElementById("fav-badge-desktop").textContent = totalItems;
+    document.getElementById("fav-badge-mobile").textContent = totalItems;
+  }
+
+  window.changeFavQty = function(productId, delta) {
+    const item = appState.favorites.find(f => f.productId === productId);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) appState.favorites = appState.favorites.filter(f => f.productId !== productId);
+    updateFavBadges();
+    renderFavorites();
+  };
+
+  window.applyCheckoutCoupon = function() {
+    if (appState.role !== "user") return;
+    const code = document.getElementById("checkout-coupon-input").value.trim().toUpperCase();
+    const feedback = document.getElementById("checkout-coupon-feedback");
+    const found = appState.coupons.find(c => c.code.toUpperCase() === code && !c.isUsed);
+    feedback.classList.remove("hidden");
+    if (found) {
+      appState.activeCoupon = found;
+      feedback.className = "text-[11px] mt-1.5 font-bold text-emerald-600";
+      feedback.textContent = `Kupon ${found.code} aktif!`;
+      renderFavorites();
+      showToast("Kupon berhasil diterapkan!", "success");
+    } else {
+      appState.activeCoupon = null;
+      feedback.className = "text-[11px] mt-1.5 font-bold text-red-600";
+      feedback.textContent = "Kupon tidak ditemukan atau sudah hangus.";
+      renderFavorites();
+    }
+  };
+
+  function renderFavorites() {
+    const container = document.getElementById("favorites-list-container");
+    if (!container) return;
+    if (appState.activeCoupon) document.getElementById("checkout-coupon-input").value = appState.activeCoupon.code;
+
+    if (appState.favorites.length === 0) {
+      container.innerHTML = `
+        <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-10 text-center">
+          <h3 class="font-display font-bold text-slate-900 text-base">Favorit Masih Kosong</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-4">Pilih produk cetak dari katalog terlebih dahulu.</p>
+          <button onclick="switchTab('catalog')" class="px-5 py-2.5 rounded-xl tg-gradient-bg text-white text-xs font-bold shadow">Jelajahi Katalog</button>
+        </div>
+      `;
+      document.getElementById("summary-subtotal").textContent = "Rp 0";
+      document.getElementById("summary-discount").textContent = "- Rp 0";
+      document.getElementById("summary-total").textContent = "Rp 0";
+      lucide.createIcons();
+      return;
+    }
+
+    let subtotal = 0;
+    container.innerHTML = appState.favorites.map(fav => {
+      const prod = appState.products.find(p => p.id === fav.productId);
+      if (!prod) return "";
+      const unitPrice = getEffectivePrice(prod);
+      const lineTotal = unitPrice * fav.qty;
+      subtotal += lineTotal;
+      const thumb = convertGoogleDriveUrl((prod.images && prod.images[0]) || "https://placehold.co/200x200");
+
+      return `
+        <div class="bg-white border border-slate-200/90 rounded-2xl p-3.5 flex items-center justify-between gap-3 shadow-sm">
+          <div class="flex items-center gap-3.5 min-w-0">
+            <img src="${thumb}" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/200x200/1d4ed8/ffffff?text=tG'" class="w-16 h-16 rounded-xl object-cover border border-slate-100 shrink-0" />
+            <div class="min-w-0">
+              <h4 class="font-display font-bold text-sm text-slate-900 truncate">${escapeHtml(prod.name)}</h4>
+              <p class="text-xs text-slate-500">${formatRupiah(unitPrice)} / pcs</p>
+              <p class="text-xs font-extrabold text-blue-700 mt-0.5">${formatRupiah(lineTotal)}</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button onclick="changeFavQty('${prod.id}', -1)" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 font-bold">-</button>
+            <span class="w-7 text-center text-xs font-extrabold">${fav.qty}</span>
+            <button onclick="changeFavQty('${prod.id}', 1)" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 font-bold">+</button>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    let discountAmount = 0;
+    if (appState.activeCoupon && !appState.activeCoupon.isUsed && appState.role === "user") {
+      if (appState.activeCoupon.discountType === "percent") {
+        discountAmount = Math.round((subtotal * appState.activeCoupon.discountValue) / 100);
+      } else {
+        discountAmount = Math.min(subtotal, Number(appState.activeCoupon.discountValue));
+      }
+    }
+
+    const finalTotal = Math.max(0, subtotal - discountAmount);
+    document.getElementById("summary-subtotal").textContent = formatRupiah(subtotal);
+    document.getElementById("summary-discount").textContent = `- ${formatRupiah(discountAmount)}`;
+    document.getElementById("summary-total").textContent = formatRupiah(finalTotal);
+    lucide.createIcons();
+  }
+
+  window.checkoutViaWhatsApp = async function() {
+    if (appState.favorites.length === 0) {
+      showToast("Daftar favorit masih kosong!", "error");
+      return;
+    }
+    const customerName = document.getElementById("checkout-customer-name").value.trim() || "Pelanggan";
+    const roleLabel = appState.role === "reseller" ? `Reseller (${appState.currentUser?.shopName || ''})` : "Pelanggan Umum";
+    let subtotal = 0;
+    let lines = [];
+
+    appState.favorites.forEach((fav, idx) => {
+      const prod = appState.products.find(p => p.id === fav.productId);
+      if (prod) {
+        const price = getEffectivePrice(prod);
+        subtotal += price * fav.qty;
+        lines.push(`${idx + 1}. *${prod.name}* (${fav.qty}x @ ${formatRupiah(price)}) = ${formatRupiah(price * fav.qty)}`);
+      }
+    });
+
+    let discountAmount = 0;
+    let couponNote = "-";
+    if (appState.activeCoupon && !appState.activeCoupon.isUsed && appState.role === "user") {
+      discountAmount = appState.activeCoupon.discountType === "percent"
+        ? Math.round((subtotal * appState.activeCoupon.discountValue) / 100)
+        : Math.min(subtotal, Number(appState.activeCoupon.discountValue));
+      couponNote = `${appState.activeCoupon.code} (-${formatRupiah(discountAmount)})`;
+
+      const usedCouponId = appState.activeCoupon.id;
+      appState.activeCoupon.isUsed = true;
+      appState.activeCoupon = null;
+      document.getElementById("checkout-coupon-input").value = "";
+      document.getElementById("checkout-coupon-feedback").classList.add("hidden");
+
+      if (isFirebaseConnected && db) {
+        try {
+          await updateDoc(doc(db, "coupons", usedCouponId), { isUsed: true });
+        } catch (err) {
+          console.error("Gagal update status kupon di Firestore:", err);
+        }
+      }
+      renderFavorites();
+    }
+
+    const grandTotal = Math.max(0, subtotal - discountAmount);
+    const waText =
+      `Halo Admin *toop Grafika*, saya ingin memesan:\n\n` +
+      `*Nama:* ${customerName}\n` +
+      `*Kategori Akun:* ${roleLabel}\n\n` +
+      `*Daftar Pesanan:*\n${lines.join("\n")}\n\n` +
+      `*Subtotal:* ${formatRupiah(subtotal)}\n` +
+      `*Kupon Diskon:* ${couponNote}\n` +
+      `*Estimasi Total:* ${formatRupiah(grandTotal)}\n\n` +
+      `Mohon info proses selanjutnya. Terima kasih!`;
+
+    window.open(`https://wa.me/${WHATSAPP_ADMIN_NUMBER}?text=${encodeURIComponent(waText)}`, "_blank");
+  };
+
+  window.daftarKeAdmin = function() {
+    const waText =
+      `Halo Admin *toop Grafika*, saya ingin konsultasi pendaftaran Reseller.\n\n` +
+      `Minta tolong dibantu. Terima kasih!`;
+
+    window.open(`https://wa.me/${WHATSAPP_ADMIN_NUMBER}?text=${encodeURIComponent(waText)}`, "_blank");
+  };
+
+  function renderPartners() {
+    const strip = document.getElementById("footer-partners-strip");
+    const allGrid = document.getElementById("all-partners-grid");
+    const renderPartnerCard = p => `
+      <div class="partner-banner-card rounded-xl border border-slate-200/90 bg-white shadow-sm overflow-hidden flex items-center justify-center p-1" title="${escapeHtml(p.companyName)}">
+        <img src="${convertGoogleDriveUrl(p.logoUrl)}" alt="${escapeHtml(p.companyName)}" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/300x65/1d4ed8/ffffff?text=MITRA+TOOP+GRAFIKA'" class="w-full h-full object-contain rounded-lg" />
+      </div>
+    `;
+    if (strip) strip.innerHTML = appState.partners.slice(0, 4).map(renderPartnerCard).join("");
+    if (allGrid) allGrid.innerHTML = appState.partners.map(renderPartnerCard).join("");
+  }
+
+  // ==========================================================================
+  // PANEL ADMIN CRUD (TERHUBUNG PENUH KE FIRESTORE)
+  // ==========================================================================
+  window.switchAdminSubTab = function(sub) {
+    document.querySelectorAll(".admin-sub-panel").forEach(p => p.classList.add("hidden"));
+    document.getElementById(`admin-sub-${sub}`).classList.remove("hidden");
+
+    document.querySelectorAll(".admin-sub-btn").forEach(btn => {
+      const text = btn.textContent.toLowerCase();
+      const active =
+        (sub === "products" && text.includes("produk")) ||
+        (sub === "coupons" && text.includes("kupon")) ||
+        (sub === "resellers" && text.includes("reseller")) ||
+        (sub === "faqs" && text.includes("faq")) ||
+        (sub === "partners" && text.includes("mitra"));
+      btn.className = active
+        ? "admin-sub-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white"
+        : "admin-sub-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700";
+    });
+  };
+
+  // 1. CRUD PRODUK
+  window.saveProductAdmin = async function(e) {
+    e.preventDefault();
+    const id = document.getElementById("prod-id").value || ("prod-" + Date.now());
+    const images = [
+      convertGoogleDriveUrl(document.getElementById("prod-img-1").value),
+      convertGoogleDriveUrl(document.getElementById("prod-img-2").value),
+      convertGoogleDriveUrl(document.getElementById("prod-img-3").value)
+    ].filter(Boolean);
+
+    const payload = {
+      id,
+      name: document.getElementById("prod-name").value.trim(),
+      category: document.getElementById("prod-category").value,
+      priceGeneral: Number(document.getElementById("prod-price-general").value),
+      priceReseller: Number(document.getElementById("prod-price-reseller").value),
+      description: document.getElementById("prod-desc").value.trim(),
+      images
+    };
+
+    if (isFirebaseConnected && db) {
+      try {
+        await setDoc(doc(db, "products", id), payload);
+        showToast("Produk berhasil disimpan ke Firebase!", "success");
+      } catch (err) {
+        showToast("Gagal menyimpan ke Firebase: " + err.message, "error");
+        return;
+      }
+    } else {
+      const idx = appState.products.findIndex(p => p.id === id);
+      if (idx > -1) appState.products[idx] = payload;
+      else appState.products.unshift(payload);
+      renderAllUI();
+      showToast("Produk disimpan (Mode Lokal).", "info");
+    }
+    resetProductForm();
+  };
+
+  window.editProductAdmin = function(id) {
+    const prod = appState.products.find(p => p.id === id);
+    if (!prod) return;
+    document.getElementById("form-product-title").textContent = "Edit Produk: " + prod.name;
+    document.getElementById("prod-id").value = prod.id;
+    document.getElementById("prod-name").value = prod.name;
+    document.getElementById("prod-category").value = prod.category;
+    document.getElementById("prod-price-general").value = prod.priceGeneral;
+    document.getElementById("prod-price-reseller").value = prod.priceReseller;
+    document.getElementById("prod-desc").value = prod.description;
+    document.getElementById("prod-img-1").value = (prod.images && prod.images[0]) || "";
+    document.getElementById("prod-img-2").value = (prod.images && prod.images[1]) || "";
+    document.getElementById("prod-img-3").value = (prod.images && prod.images[2]) || "";
+  };
+
+  window.deleteProductAdmin = function(id) {
+    openConfirmModal("Hapus Produk", "Apakah Anda yakin ingin menghapus produk ini secara permanen?", async () => {
+      if (isFirebaseConnected && db) {
+        try {
+          await deleteDoc(doc(db, "products", id));
+          showToast("Produk dihapus dari Firebase.", "info");
+        } catch (err) {
+          showToast("Gagal menghapus: " + err.message, "error");
+        }
+      } else {
+        appState.products = appState.products.filter(p => p.id !== id);
+        renderAllUI();
+      }
+    });
+  };
+
+  window.resetProductForm = function() {
+    document.getElementById("form-product-title").textContent = "Tambah Produk Baru";
+    document.getElementById("admin-product-form").reset();
+    document.getElementById("prod-id").value = "";
+  };
+
+  function renderAdminProducts() {
+    const tbody = document.getElementById("admin-products-tbody");
+    if (!tbody) return;
+    tbody.innerHTML = appState.products.map(p => `
+      <tr class="hover:bg-slate-50">
+        <td class="p-3.5 flex items-center gap-3">
+          <img src="${convertGoogleDriveUrl((p.images && p.images[0]) || 'https://placehold.co/100')}" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/100x100/1d4ed8/ffffff?text=tG'" class="w-10 h-10 rounded-lg object-cover border" />
+          <div>
+            <div class="font-bold text-slate-900">${escapeHtml(p.name)}</div>
+            <div class="text-[11px] text-slate-500">${escapeHtml(p.category)}</div>
+          </div>
+        </td>
+        <td class="p-3.5 font-semibold">${formatRupiah(p.priceGeneral)}</td>
+        <td class="p-3.5 font-bold text-emerald-700">${formatRupiah(p.priceReseller)}</td>
+        <td class="p-3.5 text-right space-x-1">
+          <button onclick="editProductAdmin('${p.id}')" class="px-2.5 py-1.5 rounded-lg bg-blue-50 text-blue-700 font-bold hover:bg-blue-100">Edit</button>
+          <button onclick="deleteProductAdmin('${p.id}')" class="px-2.5 py-1.5 rounded-lg bg-red-50 text-red-600 font-bold hover:bg-red-100">Hapus</button>
+        </td>
+      </tr>
+    `).join("");
+  }
+
+  // 2. CRUD KUPON DISKON
+  window.saveCouponAdmin = async function(e) {
+    e.preventDefault();
+    const id = "coup-" + Date.now();
+    const payload = {
+      id,
+      code: document.getElementById("coupon-code").value.trim().toUpperCase(),
+      discountType: document.getElementById("coupon-type").value,
+      discountValue: Number(document.getElementById("coupon-value").value),
+      isUsed: false
+    };
+
+    if (isFirebaseConnected && db) {
+      try {
+        await setDoc(doc(db, "coupons", id), payload);
+        showToast("Kupon baru ditambahkan ke Firebase!", "success");
+      } catch (err) {
+        showToast("Gagal menambah kupon: " + err.message, "error");
+        return;
+      }
+    } else {
+      appState.coupons.unshift(payload);
+      renderAdminCoupons();
+    }
+    e.target.reset();
+  };
+
+  window.deleteCouponAdmin = function(id) {
+    openConfirmModal("Hapus Kupon", "Yakin ingin menghapus kode kupon diskon ini?", async () => {
+      if (isFirebaseConnected && db) {
+        try {
+          await deleteDoc(doc(db, "coupons", id));
+          showToast("Kupon dihapus.", "info");
+        } catch (err) {
+          showToast("Gagal menghapus kupon: " + err.message, "error");
+        }
+      } else {
+        appState.coupons = appState.coupons.filter(c => c.id !== id);
+        renderAdminCoupons();
+      }
+    });
+  };
+
+  function renderAdminCoupons() {
+    const list = document.getElementById("admin-coupons-list");
+    if (!list) return;
+    list.innerHTML = appState.coupons.map(c => `
+      <div class="p-4 rounded-2xl border ${c.isUsed ? 'bg-slate-50 border-slate-200 opacity-70' : 'bg-white border-emerald-200'} flex items-center justify-between">
+        <div>
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold ${c.isUsed ? 'bg-red-100 text-red-700' : 'bg-emerald-100 text-emerald-700'}">
+            ${c.isUsed ? 'SUDAH HANGUS' : 'AKTIF (1X PAKAI)'}
+          </span>
+          <div class="font-display font-extrabold text-base text-slate-900 mt-1">${escapeHtml(c.code)}</div>
+          <div class="text-xs text-slate-600">Potongan: <strong>${c.discountType === 'percent' ? c.discountValue + '%' : formatRupiah(c.discountValue)}</strong></div>
+        </div>
+        <button onclick="deleteCouponAdmin('${c.id}')" class="px-3 py-1.5 rounded-xl bg-red-50 text-red-600 text-xs font-bold hover:bg-red-100">Hapus</button>
+      </div>
+    `).join("");
+  }
+
+  // 3. CRUD AKUN RESELLER
+  window.saveResellerAdmin = async function(e) {
+    e.preventDefault();
+    const id = "res-" + Date.now();
+    const rawUname = document.getElementById("res-username").value.trim().toLowerCase();
+    const normalizedUname = rawUname.includes("@") ? rawUname : `${slugifyPrintingName(rawUname)}@tgrafika.com`;
+
+    const payload = {
+      id,
+      shopName: document.getElementById("res-shop").value.trim(),
+      username: normalizedUname,
+      password: document.getElementById("res-password").value.trim(),
+      role: "reseller"
+    };
+
+    if (isFirebaseConnected && db) {
+      try {
+        await setDoc(doc(db, "users", id), payload);
+        showToast("Akun Reseller disimpan ke Firebase!", "success");
+      } catch (err) {
+        showToast("Gagal menyimpan reseller: " + err.message, "error");
+        return;
+      }
+    } else {
+      appState.resellers.unshift(payload);
+      renderAdminResellers();
+    }
+    e.target.reset();
+  };
+
+  window.deleteResellerAdmin = function(id) {
+    openConfirmModal("Hapus Akun Reseller", "Akun reseller ini tidak akan bisa login lagi setelah dihapus. Lanjutkan?", async () => {
+      if (isFirebaseConnected && db) {
+        try {
+          await deleteDoc(doc(db, "users", id));
+          showToast("Akun Reseller dihapus.", "info");
+        } catch (err) {
+          showToast("Gagal menghapus reseller: " + err.message, "error");
+        }
+      } else {
+        appState.resellers = appState.resellers.filter(r => r.id !== id);
+        renderAdminResellers();
+      }
+    });
+  };
+
+  function renderAdminResellers() {
+    const list = document.getElementById("admin-resellers-list");
+    if (!list) return;
+    list.innerHTML = appState.resellers.map(r => `
+      <div class="p-4 rounded-2xl border border-slate-200 bg-white flex items-center justify-between gap-2">
+        <div class="min-w-0">
+          <div class="font-display font-bold text-sm text-slate-900 truncate">${escapeHtml(r.shopName)}</div>
+          <div class="text-xs text-slate-500 mt-0.5 truncate">User: <strong>${escapeHtml(r.username)}</strong></div>
+          <div class="text-[11px] text-slate-400">Pass: <strong>${escapeHtml(r.password)}</strong></div>
+        </div>
+        <button onclick="deleteResellerAdmin('${r.id}')" class="px-3 py-1.5 rounded-xl bg-red-50 text-red-600 text-xs font-bold hover:bg-red-100 shrink-0">Hapus</button>
+      </div>
+    `).join("");
+  }
+
+  // 4. CRUD FAQ PENDAFTARAN RESELLER
+  window.saveFaqAdmin = async function(e) {
+    e.preventDefault();
+    const id = document.getElementById("faq-id").value || ("faq-" + Date.now());
+    const payload = {
+      id,
+      question: document.getElementById("faq-question").value.trim(),
+      answer: document.getElementById("faq-answer").value.trim(),
+      order: Number(document.getElementById("faq-order").value || 1)
+    };
+
+    if (isFirebaseConnected && db) {
+      try {
+        await setDoc(doc(db, "reseller_faqs", id), payload);
+        showToast("FAQ Pendaftaran Reseller berhasil disimpan!", "success");
+      } catch (err) {
+        showToast("Gagal menyimpan FAQ (pastikan Rules Firebase sudah dipublish): " + err.message, "error");
+        return;
+      }
+    } else {
+      const idx = appState.faqs.findIndex(f => f.id === id);
+      if (idx > -1) appState.faqs[idx] = payload;
+      else appState.faqs.push(payload);
+      appState.faqs.sort((a, b) => Number(a.order || 99) - Number(b.order || 99));
+      renderRegisterFaqs();
+      renderAdminFaqs();
+      showToast("FAQ disimpan (Mode Lokal).", "info");
+    }
+    resetFaqForm();
+  };
+
+  window.editFaqAdmin = function(id) {
+    const item = appState.faqs.find(f => f.id === id);
+    if (!item) return;
+    document.getElementById("form-faq-title").textContent = "Edit Keterangan / FAQ Reseller";
+    document.getElementById("faq-id").value = item.id;
+    document.getElementById("faq-question").value = item.question;
+    document.getElementById("faq-answer").value = item.answer;
+    document.getElementById("faq-order").value = item.order || 1;
+  };
+
+  window.deleteFaqAdmin = function(id) {
+    openConfirmModal("Hapus FAQ Reseller", "Hapus item keterangan FAQ ini dari modal pendaftaran mandiri?", async () => {
+      if (isFirebaseConnected && db) {
+        try {
+          await deleteDoc(doc(db, "reseller_faqs", id));
+          showToast("FAQ Reseller dihapus.", "info");
+        } catch (err) {
+          showToast("Gagal menghapus FAQ: " + err.message, "error");
+        }
+      } else {
+        appState.faqs = appState.faqs.filter(f => f.id !== id);
+        renderRegisterFaqs();
+        renderAdminFaqs();
+      }
+    });
+  };
+
+  window.resetFaqForm = function() {
+    document.getElementById("form-faq-title").textContent = "Tambah Keterangan / FAQ Pendaftaran Reseller";
+    document.getElementById("admin-faq-form").reset();
+    document.getElementById("faq-id").value = "";
+    document.getElementById("faq-order").value = appState.faqs.length + 1;
+  };
+
+  function renderAdminFaqs() {
+    const list = document.getElementById("admin-faqs-list");
+    if (!list) return;
+    list.innerHTML = appState.faqs.map(f => `
+      <div class="p-4 rounded-2xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <span class="inline-block px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-bold mb-1">Urutan #${escapeHtml(f.order || 1)}</span>
+          <h4 class="font-display font-bold text-sm text-slate-900">${escapeHtml(f.question)}</h4>
+          <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">${escapeHtml(f.answer)}</p>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+          <button onclick="editFaqAdmin('${f.id}')" class="px-3 py-1.5 rounded-xl bg-blue-50 text-blue-700 text-xs font-bold hover:bg-blue-100">Edit</button>
+          <button onclick="deleteFaqAdmin('${f.id}')" class="px-3 py-1.5 rounded-xl bg-red-50 text-red-600 text-xs font-bold hover:bg-red-100">Hapus</button>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  // 5. CRUD MITRA / PELANGGAN (300x65 PX)
+  window.savePartnerAdmin = async function(e) {
+    e.preventDefault();
+    const id = "part-" + Date.now();
+    const payload = {
+      id,
+      companyName: document.getElementById("partner-name").value.trim(),
+      logoUrl: convertGoogleDriveUrl(document.getElementById("partner-logo").value)
+    };
+
+    if (isFirebaseConnected && db) {
+      try {
+        await setDoc(doc(db, "partners", id), payload);
+        showToast("Banner Mitra disimpan ke Firebase!", "success");
+      } catch (err) {
+        showToast("Gagal menyimpan mitra: " + err.message, "error");
+        return;
+      }
+    } else {
+      appState.partners.unshift(payload);
+      renderPartners();
+      renderAdminPartners();
+    }
+    e.target.reset();
+  };
+
+  window.deletePartnerAdmin = function(id) {
+    openConfirmModal("Hapus Banner Mitra", "Yakin ingin menghapus logo mitra/pelanggan ini?", async () => {
+      if (isFirebaseConnected && db) {
+        try {
+          await deleteDoc(doc(db, "partners", id));
+          showToast("Mitra dihapus.", "info");
+        } catch (err) {
+          showToast("Gagal menghapus mitra: " + err.message, "error");
+        }
+      } else {
+        appState.partners = appState.partners.filter(p => p.id !== id);
+        renderPartners();
+        renderAdminPartners();
+      }
+    });
+  };
+
+  function renderAdminPartners() {
+    const list = document.getElementById("admin-partners-list");
+    if (!list) return;
+    list.innerHTML = appState.partners.map(p => `
+      <div class="p-3.5 rounded-2xl border border-slate-200 bg-white space-y-2.5">
+        <div class="partner-banner-card mx-auto rounded-lg overflow-hidden border border-slate-100">
+          <img src="${convertGoogleDriveUrl(p.logoUrl)}" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/300x65/1d4ed8/ffffff?text=MITRA+TOOP+GRAFIKA'" class="w-full h-full object-contain" />
+        </div>
+        <div class="flex items-center justify-between pt-1">
+          <span class="text-xs font-bold text-slate-800 truncate">${escapeHtml(p.companyName)}</span>
+          <button onclick="deletePartnerAdmin('${p.id}')" class="px-2.5 py-1 rounded-lg bg-red-50 text-red-600 text-xs font-bold hover:bg-red-100">Hapus</button>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  function renderAllUI() {
+    renderCatalog();
+    renderFavorites();
+    renderPartners();
+    renderRegisterFaqs();
+    renderAdminProducts();
+    renderAdminCoupons();
+    renderAdminResellers();
+    renderAdminFaqs();
+    renderAdminPartners();
+    updateFavBadges();
+    lucide.createIcons();
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const root = document.getElementById("toop-grafika-root");
+    root.addEventListener("scroll", updateScrollTopButton, { passive: true });
+    window.addEventListener("resize", updateScrollTopButton);
+    ["pointerdown", "keydown", "touchstart", "wheel", "scroll"].forEach(eventName => {
+      document.addEventListener(eventName, trackResellerActivity, { passive: true, capture: true });
+    });
+    window.addEventListener("focus", checkResellerSession);
+    document.addEventListener("visibilitychange", checkResellerSession);
+    autoSetupDatabase();
+  });
+</script>
+</body>
+</html>
